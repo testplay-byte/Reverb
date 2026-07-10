@@ -32,7 +32,7 @@ serialization = "1.9.0"
 webkit = "1.16.0"
 
 # Media3 (ExoPlayer)
-media3 = "1.10.1"
+media3 = "1.4.1"
 
 # Testing
 junit = "4.13.2"

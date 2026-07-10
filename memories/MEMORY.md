@@ -16,12 +16,17 @@
 
 ## Current state (as of this writing)
 
-- **Phase:** Phase 0 spike BUILT + CI GREEN. APK available as GitHub Actions artifact (25.6 MB).
-- **Plan:** `docs/PLAN.md` (27 sections, ~1230 lines) — the master blueprint.
-- **Research:** `docs/research/` has 7 deep reports + raw HTML captures of 10 sites.
-- **Phase 0 app:** 8 Gradle modules (`:app`, `:core:{common,network,html,video}`, `:source-api`, `:source-universal`, `:adblock`). Enhanced Universal Extractor v2 + ad-blocker contract + green M3 Expressive UI. CI builds successfully on push. Unit tests pass (including the 13-case ad-blocker contract test).
-- **NOT yet done:** The 10-site gate test (needs a real Android device — can't run in the build sandbox). The Cloudflare WebView solver is a stub.
-- **Live preview:** `/home/z/my-project/` runs a Next.js viewer for the plan (16 sections including an end-to-end flow diagram). Not part of the Android app.
+- **Phase:** Phase 1 MVP BUILT + CI GREEN. APK available as GitHub Actions artifact (29.4 MB).
+- **Phase 0 app:** Enhanced Universal Extractor v2 + ad-blocker contract (13-case test passing).
+- **Phase 1 additions:**
+  - Logging: AndroidLogger + ReverbLog throughout ALL modules (Network, Extractor, AdBlock, Player, App, Data, Settings, CfSolver). Filter: `adb logcat -s Reverb/*`
+  - Real Cloudflare WebView solver (WebViewCloudflareSolver + AndroidCookieJar) — replaces Phase 0 stub
+  - :data module (JsonStore + DataRepository — history, bookmarks, downloads, learned sites, settings)
+  - :player module (Media3 ExoPlayer 1.4.1 — HLS/DASH/progressive via DefaultMediaSourceFactory)
+  - Full 3-screen UI (Browse + Downloads + Settings) with bottom navigation, green M3 Expressive theme
+  - 5 languages i18n (en, ja, es, fr, de)
+- **NOT yet done:** 10-site gate test (needs device), actual download execution (queue created but not executed), ML Kit translation (toggle exists), theme modules (optional), 12 more languages.
+- **Live preview:** `/home/z/my-project/` runs a Next.js viewer for the plan. Not part of the Android app.
 
 ## The 5-phase roadmap (from PLAN.md §26)
 

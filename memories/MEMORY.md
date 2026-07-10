@@ -16,10 +16,12 @@
 
 ## Current state (as of this writing)
 
-- **Phase:** Planning v3.0 complete. Build NOT started. Waiting on user's "go" signal.
+- **Phase:** Phase 0 spike BUILT + CI GREEN. APK available as GitHub Actions artifact (25.6 MB).
 - **Plan:** `docs/PLAN.md` (27 sections, ~1230 lines) — the master blueprint.
-- **Research:** `docs/research/` has 7 deep reports (tech stack, LLM, translation, anime-extensions anatomy, ad-blocking, downloads, 10-site analysis) + raw HTML captures of 10 sites.
-- **Live preview:** `/home/z/my-project/` runs a Next.js viewer for the plan (16 sections including an end-to-end flow diagram). Not part of the Android app — just a visualization of the plan.
+- **Research:** `docs/research/` has 7 deep reports + raw HTML captures of 10 sites.
+- **Phase 0 app:** 8 Gradle modules (`:app`, `:core:{common,network,html,video}`, `:source-api`, `:source-universal`, `:adblock`). Enhanced Universal Extractor v2 + ad-blocker contract + green M3 Expressive UI. CI builds successfully on push. Unit tests pass (including the 13-case ad-blocker contract test).
+- **NOT yet done:** The 10-site gate test (needs a real Android device — can't run in the build sandbox). The Cloudflare WebView solver is a stub.
+- **Live preview:** `/home/z/my-project/` runs a Next.js viewer for the plan (16 sections including an end-to-end flow diagram). Not part of the Android app.
 
 ## The 5-phase roadmap (from PLAN.md §26)
 

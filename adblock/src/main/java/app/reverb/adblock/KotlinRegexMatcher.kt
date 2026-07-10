@@ -1,5 +1,6 @@
 package app.reverb.adblock
 
+import app.reverb.core.common.ReverbLog
 import app.reverb.core.common.UrlUtils
 
 /**
@@ -97,9 +98,18 @@ class KotlinRegexMatcher(
 
     override fun checkNetwork(url: String, requestType: AdMatcher.RequestType, acceptHeader: String?): AdMatcher.Verdict {
         // ── THE CRITICAL CONTRACT: never block video URLs ─────────────────────────
-        if (UrlUtils.isVideoUrl(url)) return AdMatcher.Verdict.ALLOW
-        if (requestType == AdMatcher.RequestType.MEDIA) return AdMatcher.Verdict.ALLOW
-        if (UrlUtils.isMediaAcceptHeader(acceptHeader)) return AdMatcher.Verdict.ALLOW
+        if (UrlUtils.isVideoUrl(url)) {
+            ReverbLog.d("AdBlock", "ALLOW (video URL) $url — contract enforced")
+            return AdMatcher.Verdict.ALLOW
+        }
+        if (requestType == AdMatcher.RequestType.MEDIA) {
+            ReverbLog.d("AdBlock", "ALLOW (MEDIA type) $url — contract enforced")
+            return AdMatcher.Verdict.ALLOW
+        }
+        if (UrlUtils.isMediaAcceptHeader(acceptHeader)) {
+            ReverbLog.d("AdBlock", "ALLOW (media Accept header) $url — contract enforced")
+            return AdMatcher.Verdict.ALLOW
+        }
         // ───────────────────────────────────────────────────────────────────────────
 
         val host = UrlUtils.host(url) ?: return AdMatcher.Verdict.ALLOW
@@ -107,6 +117,7 @@ class KotlinRegexMatcher(
         var blocked = false
         for (rule in networkRules) {
             if (rule.isException && matchesHost(host, rule.hostPattern)) {
+                ReverbLog.d("AdBlock", "ALLOW (exception) $url — matched @@${rule.hostPattern}")
                 return AdMatcher.Verdict.ALLOW // exception wins
             }
             if (!rule.isException && matchesHost(host, rule.hostPattern)) {
@@ -114,6 +125,9 @@ class KotlinRegexMatcher(
                     blocked = true
                 }
             }
+        }
+        if (blocked) {
+            ReverbLog.d("AdBlock", "BLOCK $url — type=$requestType host=$host")
         }
         return if (blocked) AdMatcher.Verdict.BLOCK else AdMatcher.Verdict.ALLOW
     }

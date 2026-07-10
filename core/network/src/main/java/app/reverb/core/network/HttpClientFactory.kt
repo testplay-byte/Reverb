@@ -43,11 +43,7 @@ class HttpClientFactory(
         builder.addInterceptor(RateLimitInterceptor())
 
         if (enableLogging) {
-            builder.addInterceptor(
-                HttpLoggingInterceptor().apply {
-                    level = HttpLoggingInterceptor.Level.BASIC
-                }
-            )
+            builder.addInterceptor(RequestLoggingInterceptor())
         }
 
         builder.addInterceptor(CloudflareInterceptor(cloudflareSolver))

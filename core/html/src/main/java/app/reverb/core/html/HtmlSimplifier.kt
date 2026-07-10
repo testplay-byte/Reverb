@@ -1,5 +1,6 @@
 package app.reverb.core.html
 
+import app.reverb.core.common.ReverbLog
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
@@ -74,6 +75,10 @@ object HtmlSimplifier {
 
         // 5. Build the compact payload: title + nav + 3 sample cards.
         val compact = buildCompactPayload(doc, candidates)
+
+        ReverbLog.i("HtmlSimplifier",
+            "Simplified '${doc.title()}': ${html.length}B → ${compact.length}B " +
+            "(${candidates.size} candidates, top=${candidates.firstOrNull()?.selector ?: "none"} x${candidates.firstOrNull()?.count ?: 0})")
 
         return SimplifiedHtml(
             title = doc.title(),

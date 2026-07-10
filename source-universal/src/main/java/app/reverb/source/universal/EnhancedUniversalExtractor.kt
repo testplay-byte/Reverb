@@ -6,6 +6,7 @@ import android.webkit.WebResourceResponse
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import app.reverb.adblock.AdMatcher
+import app.reverb.core.common.ReverbLog
 import app.reverb.core.common.UrlUtils
 import app.reverb.core.video.HlsMasterParser
 import app.reverb.source.api.Quality
@@ -56,32 +57,52 @@ class EnhancedUniversalExtractor(
      * plus subtitles if found. Returns null if no stream is detected within the timeout.
      */
     suspend fun resolve(url: String, timeoutMs: Long = 15_000L): ResolvedStream? {
+        ReverbLog.i("Extractor", "resolve() START — url=$url timeout=${timeoutMs}ms")
+        val startMs = System.currentTimeMillis()
         val detected = CompletableDeferred<List<DetectedStream>>()
 
         // Configure the WebView client + JS hooks.
         val client = UniversalWebViewClient(url, httpClient, adMatcher) { streams ->
-            if (!detected.isCompleted) detected.complete(streams)
+            if (!detected.isCompleted) {
+                ReverbLog.i("Extractor", "First stream detected — ${streams.size} total, completing")
+                detected.complete(streams)
+            }
         }
 
         runOnMainThread {
             configureWebView(webView, client)
-            injectInteractionSimulator(webView)
             webView.loadUrl(url)
         }
+        ReverbLog.d("Extractor", "WebView.loadUrl($url) dispatched to main thread")
 
         // Wait for the first detection OR timeout.
         val streams = withTimeoutOrNull(timeoutMs) { detected.await() }
             ?: run {
-                // Timed out — harvest whatever was captured so far.
-                client.capturedStreams().ifEmpty { return null }
+                ReverbLog.w("Extractor", "Timed out after ${timeoutMs}ms — harvesting captured streams")
+                client.capturedStreams().ifEmpty {
+                    ReverbLog.e("Extractor", "No streams captured within timeout — url=$url")
+                    return null
+                }
             }
 
-        if (streams.isEmpty()) return null
+        if (streams.isEmpty()) {
+            ReverbLog.e("Extractor", "Detected streams list is empty — url=$url")
+            return null
+        }
+
+        ReverbLog.i("Extractor", "Captured ${streams.size} stream(s): ${streams.joinToString { "${it.format}(${it.source})" }}")
 
         // Pick the best detected stream: prefer HLS master > DASH > progressive MP4 > blob.
-        val best = pickBest(streams) ?: return null
+        val best = pickBest(streams) ?: run {
+            ReverbLog.e("Extractor", "pickBest() returned null — no usable stream format")
+            return null
+        }
 
-        return resolveToStream(best, url)
+        ReverbLog.i("Extractor", "Best stream: ${best.format} from ${best.source} — ${best.url.take(80)}...")
+        val result = resolveToStream(best, url)
+        val elapsed = System.currentTimeMillis() - startMs
+        ReverbLog.i("Extractor", "resolve() DONE in ${elapsed}ms — ${result.qualities.size} qualities via ${result.extractorUsed}")
+        return result
     }
 
     /** Stop any in-flight extraction and tear down the WebView. Call from the main thread. */
@@ -236,6 +257,9 @@ class UniversalWebViewClient(
         val newOnes = streams.filter { reportedUrls.add(it.url) }
         if (newOnes.isNotEmpty()) {
             captured.addAll(newOnes)
+            newOnes.forEach { s ->
+                ReverbLog.d("Extractor", "Stream captured: ${s.format} via ${s.source} — ${s.url.take(100)}")
+            }
             onStreamsDetected(captured.toList())
         }
     }
@@ -248,12 +272,14 @@ class UniversalWebViewClient(
         if (UrlUtils.isVideoUrl(url)) {
             val format = inferFormat(url)
             val isMaster = format == StreamFormat.HLS && isHlsMaster(url)
+            ReverbLog.i("Extractor", "VIDEO URL intercepted: format=$format isMaster=$isMaster — $url")
             addCapturedStreams(listOf(DetectedStream(url, format, isMaster, source = "shouldInterceptRequest")))
             return null // let the WebView fetch it normally
         }
 
         // Also catch blob: URLs (these come through shouldInterceptRequest as blob:...).
         if (UrlUtils.isBlobUrl(url)) {
+            ReverbLog.i("Extractor", "BLOB URL intercepted — $url")
             addCapturedStreams(listOf(DetectedStream(url, StreamFormat.BLOB, source = "blob")))
             return null
         }
@@ -323,9 +349,13 @@ class UniversalWebViewClient(
                     }
                 }
 
+                if (results.isNotEmpty()) {
+                    ReverbLog.i("Extractor", "Response-body scan found ${results.size} stream(s) in XHR from $url")
+                }
                 results.distinctBy { it.url }
             }
         } catch (e: Exception) {
+            ReverbLog.w("Extractor", "Response-body scan failed for $url — ${e.message}")
             emptyList()
         }
     }

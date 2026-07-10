@@ -1,5 +1,9 @@
 package app.reverb.core.network
 
+import android.util.Log
+import app.reverb.core.common.Logger
+import app.reverb.core.common.NoopLogger
+import app.reverb.core.common.ReverbLog
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.util.Locale
@@ -8,9 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger
 
 /**
  * Rate-limit interceptor — sliding-window per host.
- *
  * Default: 1 request per 2 seconds per host. Matches Aniyomi's pattern.
- * Per-site overrides can be applied by wrapping the client.
  */
 class RateLimitInterceptor(
     private val minIntervalMs: Long = 2000L,
@@ -23,13 +25,13 @@ class RateLimitInterceptor(
         val host = chain.request().url.host
         val now = System.currentTimeMillis()
 
-        // Per-host mutual exclusion so we actually respect the interval.
         val counter = inFlight.computeIfAbsent(host) { AtomicInteger(0) }
         synchronized(counter) {
             val last = lastRequestTimes[host] ?: 0L
             val elapsed = now - last
             if (elapsed < minIntervalMs) {
                 val sleep = minIntervalMs - elapsed
+                ReverbLog.d("RateLimit", "Waiting ${sleep}ms for host $host (rate limit)")
                 try { Thread.sleep(sleep) } catch (_: InterruptedException) {
                     Thread.currentThread().interrupt()
                 }
@@ -43,7 +45,6 @@ class RateLimitInterceptor(
 
 /**
  * User-Agent interceptor — picks a realistic desktop Chrome UA.
- * Phase 0 uses a single static UA; Phase 1 will fetch a rotating list.
  */
 class UserAgentInterceptor(
     private val userAgent: String = DEFAULT_UA,
@@ -64,10 +65,31 @@ class UserAgentInterceptor(
 }
 
 /**
+ * Request-logging interceptor — logs every HTTP request with method, URL, response code, and timing.
+ */
+class RequestLoggingInterceptor : Interceptor {
+    override fun intercept(chain: Interceptor.Chain): Response {
+        val request = chain.request()
+        val method = request.method
+        val url = request.url.toString()
+        val startMs = System.currentTimeMillis()
+
+        return try {
+            val response = chain.proceed(request)
+            val elapsed = System.currentTimeMillis() - startMs
+            ReverbLog.d("Network", "$method $url → ${response.code} (${elapsed}ms)")
+            response
+        } catch (e: Exception) {
+            val elapsed = System.currentTimeMillis() - startMs
+            ReverbLog.e("Network", "$method $url FAILED after ${elapsed}ms — ${e.message}", e)
+            throw e
+        }
+    }
+}
+
+/**
  * Cloudflare interceptor — detects CF challenge responses (403/503 with the CF server header)
  * and delegates to a [CloudflareSolver] to obtain a cf_clearance cookie.
- *
- * Phase 0 ships a stub solver that just logs; Phase 1 wires the real WebView cookie-poll solver.
  */
 class CloudflareInterceptor(
     private val solver: CloudflareSolver = NoopCloudflareSolver,
@@ -77,10 +99,18 @@ class CloudflareInterceptor(
         val response = chain.proceed(chain.request())
         if (!isCloudflareChallenge(response)) return response
 
-        // Close the challenge response, solve, and retry once.
+        val url = chain.request().url.toString()
+        ReverbLog.w("Cloudflare", "Challenge detected for $url (HTTP ${response.code}) — invoking solver")
         response.close()
-        val solved = solver.solve(chain.request().url.toString(), chain)
-        return if (solved) chain.proceed(chain.request()) else chain.proceed(chain.request())
+
+        val solved = solver.solve(url, chain)
+        if (solved) {
+            ReverbLog.i("Cloudflare", "Challenge solved for $url — retrying request")
+            return chain.proceed(chain.request())
+        } else {
+            ReverbLog.e("Cloudflare", "Failed to solve challenge for $url — returning unsolved response")
+            return chain.proceed(chain.request())
+        }
     }
 
     private fun isCloudflareChallenge(response: Response): Boolean {
@@ -91,22 +121,19 @@ class CloudflareInterceptor(
     }
 }
 
-/** Contract for solving a Cloudflare challenge. */
+/**
+ * Contract for solving a Cloudflare challenge.
+ * Synchronous because OkHttp interceptors are blocking.
+ * The WebView-based solver uses runBlocking internally to bridge the coroutine.
+ */
 fun interface CloudflareSolver {
-    /**
-     * Solve the CF challenge for [url]. Returns true if cookies were obtained and
-     * the retry should proceed. Implementations update the shared CookieJar.
-     *
-     * NOTE: synchronous because OkHttp interceptors are blocking. The WebView-based
-     * solver (Phase 1) will use runBlocking internally to bridge the coroutine.
-     */
     fun solve(url: String, chain: Interceptor.Chain): Boolean
 }
 
-/** Phase-0 no-op solver — logs and returns false. Phase 1 will replace with the WebView solver. */
+/** Phase-0 no-op solver — logs and returns false. Phase 1 replaces with the WebView solver. */
 object NoopCloudflareSolver : CloudflareSolver {
     override fun solve(url: String, chain: Interceptor.Chain): Boolean {
-        println("[CloudflareInterceptor] CF challenge detected for $url — no solver wired (Phase 0 stub)")
+        ReverbLog.w("Cloudflare", "No solver wired (Phase 0 stub) — cannot solve challenge for $url")
         return false
     }
 }

@@ -20,6 +20,7 @@ local.properties
 # ── Kotlin / Java ─────────────────────────────────────────────
 *.log
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.ear
 *.zip

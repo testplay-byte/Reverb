@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reverb</string>
+    <string name="address_bar_hint">Enter a URL or search…</string>
+    <string name="detected_streams">Detected streams</string>
+    <string name="no_streams_detected">No streams detected yet. Navigate to a video page.</string>
+    <string name="extracting">Extracting…</string>
+    <string name="play">Play</string>
+    <string name="download">Download</string>
+    <string name="stop">Stop</string>
+    <string name="copy_url">Copy URL</string>
+    <string name="open_in_browser">Open in browser</string>
+    <string name="adblock_status">Ad-block: %1$s</string>
+    <string name="adblock_on">on</string>
+    <string name="adblock_off">off</string>
+</resources>

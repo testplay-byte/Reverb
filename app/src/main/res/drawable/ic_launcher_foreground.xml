@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reverb logo: a stylized "R" waveform — represents both "Reverb" and audio/video waves. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- The waveform: a horizontal line with peaks, evoking both audio reverb and video detection. -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M30,54 L40,54 L46,38 L52,70 L58,30 L64,78 L70,46 L76,54 L78,54" />
+    <!-- The "play" triangle as a dot at the end — represents the detected video stream. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M82,54 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+</vector>

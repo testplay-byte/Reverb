@@ -28,13 +28,8 @@ jobs:
         with:
           cache-read-only: ${{ github.ref != 'refs/heads/main' }}
 
-      - name: Generate Gradle wrapper
-        run: |
-          if [ ! -f gradlew ]; then
-            # Generate the wrapper using the installed Gradle (provided by the setup-gradle action)
-            gradle wrapper --gradle-version 9.6.1 --distribution-type bin
-          fi
-          chmod +x gradlew
+      - name: Make gradlew executable
+        run: chmod +x gradlew
 
       - name: Validate Gradle config
         run: ./gradlew help --no-daemon --stacktrace

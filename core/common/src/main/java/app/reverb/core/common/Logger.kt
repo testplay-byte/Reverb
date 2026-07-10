@@ -46,7 +46,7 @@ object Loggers {
 
 /**
  * The main logging entry point for all Reverb modules.
- * Automatically prefixes tags with "Reverb/" for easy logcat filtering: `adb logcat -s Reverb/*`
+ * Automatically prefixes tags with "Reverb/" for easy logcat filtering: adb logcat -s Reverb
  *
  * Example output:
  *   D/Reverb﹕ Network: GET https://anidb.app/home → 200 (234ms)

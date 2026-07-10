@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reverb</string>
+    <string name="nav_browse">ブラウズ</string>
+    <string name="nav_downloads">ダウンロード</string>
+    <string name="nav_settings">設定</string>
+    <string name="address_bar_hint">URLを入力または検索…</string>
+    <string name="extracting">抽出中…</string>
+    <string name="detected_streams">検出されたストリーム</string>
+    <string name="no_streams_detected">上に動画ページのURLを入力してください</string>
+    <string name="play">再生</string>
+    <string name="playing">再生中</string>
+    <string name="download">ダウンロード</string>
+    <string name="copy_url">URLをコピー</string>
+    <string name="recent">最近</string>
+    <string name="queue">キュー</string>
+    <string name="completed">完了</string>
+    <string name="no_downloads">ダウンロードはまだありません。動画を抽出してダウンロードをタップしてください。</string>
+    <string name="settings">設定</string>
+    <string name="ad_blocking">広告ブロック</string>
+    <string name="ad_blocking_desc">EasyList + AdGuardフィルターリストを使用して広告をブロックします。</string>
+    <string name="doh">DNS-over-HTTPS</string>
+    <string name="doh_desc">Cloudflare 1.1.1.1を通じてDNSクエリをルーティングします。</string>
+    <string name="cf_solver">Cloudflareソルバー</string>
+    <string name="cf_solver_desc">WebView Cookie-pollingでCloudflareチャレンジを自動解決します。</string>
+    <string name="translation">コンテンツ翻訳</string>
+    <string name="translation_desc">アニメのタイトル、あらすじ、エピソードタイトルをあなたの言語に翻訳します。</string>
+    <string name="auto_translate">自動翻訳</string>
+    <string name="auto_translate_desc">ソース言語がロケールと異なる場合、自動的に翻訳します。</string>
+    <string name="wifi_only">Wi-Fiのみ</string>
+    <string name="wifi_only_desc">モバイルデータを節約するためWi-Fiのみでダウンロードします。</string>
+    <string name="about">について</string>
+    <string name="about_desc">Webを再構築するAndroidブラウザ。</string>
+    <string name="version">Phase 1 MVP • v0.1.0</string>
+</resources>

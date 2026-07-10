@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reverb</string>
+    <string name="nav_browse">Durchsuchen</string>
+    <string name="nav_downloads">Downloads</string>
+    <string name="nav_settings">Einstellungen</string>
+    <string name="address_bar_hint">URL eingeben oder suchen…</string>
+    <string name="extracting">Extrahieren…</string>
+    <string name="detected_streams">Erkannte Streams</string>
+    <string name="no_streams_detected">Geben Sie oben eine Video-URL ein</string>
+    <string name="play">Abspielen</string>
+    <string name="playing">Wird abgespielt</string>
+    <string name="download">Herunterladen</string>
+    <string name="copy_url">URL kopieren</string>
+    <string name="recent">Neueste</string>
+    <string name="queue">Warteschlange</string>
+    <string name="completed">Abgeschlossen</string>
+    <string name="no_downloads">Noch keine Downloads. Video extrahieren und Herunterladen tippen.</string>
+    <string name="settings">Einstellungen</string>
+    <string name="ad_blocking">Werbung blockieren</string>
+    <string name="ad_blocking_desc">Werbung mit EasyList + AdGuard blockieren.</string>
+    <string name="doh">DNS-over-HTTPS</string>
+    <string name="doh_desc">DNS-Anfragen über Cloudflare 1.1.1.1 leiten.</string>
+    <string name="cf_solver">Cloudflare-Löser</string>
+    <string name="cf_solver_desc">Cloudflare-Herausforderungen automatisch lösen.</string>
+    <string name="translation">Inhaltsübersetzung</string>
+    <string name="translation_desc">Titel, Zusammenfassungen und Episoden in Ihre Sprache übersetzen.</string>
+    <string name="auto_translate">Auto-Übersetzung</string>
+    <string name="auto_translate_desc">Automatisch übersetzen, wenn die Sprache abweicht.</string>
+    <string name="wifi_only">Nur WLAN</string>
+    <string name="wifi_only_desc">Nur über WLAN herunterladen.</string>
+    <string name="about">Über</string>
+    <string name="about_desc">Ein Android-Browser, der das Web neu aufbaut.</string>
+    <string name="version">Phase 1 MVP • v0.1.0</string>
+</resources>

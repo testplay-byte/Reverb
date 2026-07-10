@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reverb</string>
+    <string name="nav_browse">Parcourir</string>
+    <string name="nav_downloads">Téléchargements</string>
+    <string name="nav_settings">Paramètres</string>
+    <string name="address_bar_hint">Entrez une URL ou recherchez…</string>
+    <string name="extracting">Extraction…</string>
+    <string name="detected_streams">Flux détectés</string>
+    <string name="no_streams_detected">Entrez une URL de page vidéo ci-dessus</string>
+    <string name="play">Lire</string>
+    <string name="playing">Lecture</string>
+    <string name="download">Télécharger</string>
+    <string name="copy_url">Copier l\'URL</string>
+    <string name="recent">Récent</string>
+    <string name="queue">File d\'attente</string>
+    <string name="completed">Terminé</string>
+    <string name="no_downloads">Aucun téléchargement. Extrayez une vidéo et appuyez sur Télécharger.</string>
+    <string name="settings">Paramètres</string>
+    <string name="ad_blocking">Blocage des pubs</string>
+    <string name="ad_blocking_desc">Bloquer les pubs avec EasyList + AdGuard.</string>
+    <string name="doh">DNS-over-HTTPS</string>
+    <string name="doh_desc">Router les requêtes DNS via Cloudflare 1.1.1.1.</string>
+    <string name="cf_solver">Solveur Cloudflare</string>
+    <string name="cf_solver_desc">Résoudre automatiquement les défis Cloudflare.</string>
+    <string name="translation">Traduction du contenu</string>
+    <string name="translation_desc">Traduire titres, synopsis et épisodes dans votre langue.</string>
+    <string name="auto_translate">Traduction auto</string>
+    <string name="auto_translate_desc">Traduire automatiquement quand la langue diffère.</string>
+    <string name="wifi_only">Wi-Fi uniquement</string>
+    <string name="wifi_only_desc">Télécharger uniquement en Wi-Fi.</string>
+    <string name="about">À propos</string>
+    <string name="about_desc">Un navigateur Android qui reconstruit le web.</string>
+    <string name="version">Phase 1 MVP • v0.1.0</string>
+</resources>

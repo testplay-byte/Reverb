@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Reverb</string>
+    <string name="nav_browse">Explorar</string>
+    <string name="nav_downloads">Descargas</string>
+    <string name="nav_settings">Ajustes</string>
+    <string name="address_bar_hint">Introduce una URL o busca…</string>
+    <string name="extracting">Extrayendo…</string>
+    <string name="detected_streams">Streams detectados</string>
+    <string name="no_streams_detected">Introduce una URL de página de vídeo arriba</string>
+    <string name="play">Reproducir</string>
+    <string name="playing">Reproduciendo</string>
+    <string name="download">Descargar</string>
+    <string name="copy_url">Copiar URL</string>
+    <string name="recent">Reciente</string>
+    <string name="queue">Cola</string>
+    <string name="completed">Completado</string>
+    <string name="no_downloads">Sin descargas aún. Extrae un vídeo y pulsa Descargar.</string>
+    <string name="settings">Ajustes</string>
+    <string name="ad_blocking">Bloqueo de anuncios</string>
+    <string name="ad_blocking_desc">Bloquear anuncios con EasyList + AdGuard.</string>
+    <string name="doh">DNS-over-HTTPS</string>
+    <string name="doh_desc">Enrutar consultas DNS a través de Cloudflare 1.1.1.1.</string>
+    <string name="cf_solver">Solucionador Cloudflare</string>
+    <string name="cf_solver_desc">Resolver desafíos de Cloudflare automáticamente.</string>
+    <string name="translation">Traducción de contenido</string>
+    <string name="translation_desc">Traducir títulos, sinopsis y episodios a tu idioma.</string>
+    <string name="auto_translate">Traducción automática</string>
+    <string name="auto_translate_desc">Traducir automáticamente cuando el idioma difiere.</string>
+    <string name="wifi_only">Solo Wi-Fi</string>
+    <string name="wifi_only_desc">Descargar solo por Wi-Fi.</string>
+    <string name="about">Acerca de</string>
+    <string name="about_desc">Un navegador Android que reconstruye la web.</string>
+    <string name="version">Phase 1 MVP • v0.1.0</string>
+</resources>

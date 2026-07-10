@@ -60,6 +60,7 @@ dependencies {
     implementation(project(":source-universal"))
     implementation(project(":adblock"))
     implementation(project(":data"))
+    implementation(project(":player"))
 
     // AndroidX core
     implementation(libs.androidx.core.ktx)
@@ -89,4 +90,9 @@ dependencies {
     implementation(libs.okhttp.dnsoverhttps)
     implementation(libs.jsoup)
     implementation(libs.coroutines.core)
+
+    // Media3 (player UI)
+    implementation(libs.media3.ui)
+    implementation(libs.media3.common)
+    implementation(libs.media3.exoplayer)
 }

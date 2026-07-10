@@ -10,6 +10,7 @@ import app.reverb.core.network.HttpClientFactory
 import app.reverb.data.DataRepository
 import app.reverb.extractor.ExtractorManager
 import app.reverb.logging.AndroidLogger
+import app.reverb.player.ReverbPlayer
 import app.reverb.source.universal.UniversalSite
 import app.reverb.source.universal.WebViewCloudflareSolver
 import okhttp3.OkHttpClient
@@ -20,6 +21,7 @@ class ReverbApp : Application() {
     lateinit var dataRepository: DataRepository
     lateinit var extractorManager: ExtractorManager
     lateinit var universalSite: UniversalSite
+    lateinit var player: ReverbPlayer
     lateinit var httpClient: OkHttpClient
 
     override fun onCreate() {
@@ -56,6 +58,9 @@ class ReverbApp : Application() {
         // ── Extractor ──
         extractorManager = ExtractorManager(this, httpClient, adMatcher)
         universalSite = UniversalSite(extractorManager.extractor)
+
+        // ── Player ──
+        player = ReverbPlayer(this, httpClient)
         ReverbLog.i("App", "Reverb ready — Phase 1 MVP wired")
     }
 

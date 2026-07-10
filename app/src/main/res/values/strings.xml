@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- App -->
     <string name="app_name">Reverb</string>
+
+    <!-- Navigation -->
+    <string name="nav_browse">Browse</string>
+    <string name="nav_downloads">Downloads</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Browse screen -->
     <string name="address_bar_hint">Enter a URL or search…</string>
-    <string name="detected_streams">Detected streams</string>
-    <string name="no_streams_detected">No streams detected yet. Navigate to a video page.</string>
     <string name="extracting">Extracting…</string>
+    <string name="detected_streams">Detected streams</string>
+    <string name="no_streams_detected">Enter a video page URL above</string>
     <string name="play">Play</string>
+    <string name="playing">Playing</string>
     <string name="download">Download</string>
-    <string name="stop">Stop</string>
     <string name="copy_url">Copy URL</string>
-    <string name="open_in_browser">Open in browser</string>
-    <string name="adblock_status">Ad-block: %1$s</string>
-    <string name="adblock_on">on</string>
-    <string name="adblock_off">off</string>
+    <string name="recent">Recent</string>
+
+    <!-- Downloads screen -->
+    <string name="queue">Queue</string>
+    <string name="completed">Completed</string>
+    <string name="no_downloads">No downloads yet. Extract a video and tap Download.</string>
+
+    <!-- Settings screen -->
+    <string name="settings">Settings</string>
+    <string name="ad_blocking">Ad-blocking</string>
+    <string name="ad_blocking_desc">Block ads using EasyList + AdGuard filter lists. The extractor-before-blocker contract ensures video URLs are never blocked.</string>
+    <string name="doh">DNS-over-HTTPS</string>
+    <string name="doh_desc">Route DNS queries through Cloudflare 1.1.1.1 to bypass DNS-level blocking.</string>
+    <string name="cf_solver">Cloudflare solver</string>
+    <string name="cf_solver_desc">Automatically solve Cloudflare challenges via WebView cookie-polling (up to 30s per challenge).</string>
+    <string name="translation">Content translation</string>
+    <string name="translation_desc">Translate anime titles, synopses, and episode titles to your language (ML Kit, on-device).</string>
+    <string name="auto_translate">Auto-translate</string>
+    <string name="auto_translate_desc">Automatically translate content when the source language differs from your locale.</string>
+    <string name="wifi_only">Wi-Fi only</string>
+    <string name="wifi_only_desc">Only download over Wi-Fi to save mobile data.</string>
+    <string name="about">About</string>
+    <string name="about_desc">An Android browser that rebuilds the web.</string>
+    <string name="version">Phase 1 MVP • v0.1.0</string>
 </resources>

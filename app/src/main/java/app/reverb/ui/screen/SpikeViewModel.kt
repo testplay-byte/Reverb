@@ -7,18 +7,14 @@ import android.content.Intent
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import app.reverb.extractor.ExtractorManager
+import app.reverb.ReverbApp
 import app.reverb.source.api.ResolvedStream
 import app.reverb.source.api.VideoRef
-import app.reverb.source.universal.UniversalSite
-import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 data class SpikeState(
     val urlInput: String = "",
@@ -28,11 +24,9 @@ data class SpikeState(
     val adBlocksCount: Int = 0,
 )
 
-@HiltViewModel
-class SpikeViewModel @Inject constructor(
-    @ApplicationContext private val context: Context,
-    private val extractorManager: ExtractorManager,
-    private val universalSite: UniversalSite,
+class SpikeViewModel(
+    private val context: Context,
+    private val universalSite: app.reverb.source.universal.UniversalSite,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(SpikeState())
@@ -70,9 +64,12 @@ class SpikeViewModel @Inject constructor(
 
     private fun normalizeUrl(input: String): String {
         if (input.startsWith("http://") || input.startsWith("https://")) return input
-        // If it looks like a domain (has a dot, no spaces), prepend https://.
         if (input.contains('.') && !input.contains(' ')) return "https://$input"
-        // Otherwise treat as a search query → DuckDuckGo.
         return "https://duckduckgo.com/?q=" + java.net.URLEncoder.encode(input, "UTF-8")
+    }
+
+    companion object {
+        fun create(app: ReverbApp): SpikeViewModel =
+            SpikeViewModel(app, app.universalSite)
     }
 }

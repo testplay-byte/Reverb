@@ -51,7 +51,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import app.reverb.ReverbApp
 import app.reverb.source.api.Quality
 
 /**
@@ -62,8 +63,9 @@ import app.reverb.source.api.Quality
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun SpikeScreen(
-    viewModel: SpikeViewModel = hiltViewModel(),
+    app: ReverbApp,
 ) {
+    val viewModel: SpikeViewModel = remember { SpikeViewModel.create(app) }
     val state by viewModel.state.collectAsState()
     var sheetOpen by remember { mutableStateOf(false) }
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)

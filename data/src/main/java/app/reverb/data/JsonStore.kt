@@ -31,7 +31,7 @@ class JsonStore(private val context: Context) {
         File(context.filesDir, "reverb").also { it.mkdirs() }
     }
 
-    private val caches = mutableMapOf<String, Any>()
+    private val caches = mutableMapOf<String, Any?>()
 
     /**
      * Load a list of [T] items from a JSON file. Cached in memory after first load.

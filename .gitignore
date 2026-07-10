@@ -1,0 +1,122 @@
+# ─────────────────────────────────────────────────────────────
+# Reverb — .gitignore
+# Android / Kotlin / Gradle + IDE + secrets + build-tooling
+# ─────────────────────────────────────────────────────────────
+
+# ── Gradle ────────────────────────────────────────────────────
+.gradle/
+build/
+out/
+!**/src/**/build/
+!**/lib/**/build/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+.cxx/
+local.properties
+
+# ── Kotlin / Java ─────────────────────────────────────────────
+*.log
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+# ── Android Studio / IntelliJ ─────────────────────────────────
+.idea/
+*.iml
+*.iws
+*.ipr
+captures/
+.externalNativeBuild/
+.cxx/
+
+# ── Eclipse / VS Code ─────────────────────────────────────────
+.classpath
+.project
+.settings/
+*.launch
+.vscode/
+.history/
+
+# ── Android (device artifacts) ────────────────────────────────
+*.keystore
+*.jks
+keystore.properties
+!debug.keystore
+key.properties
+
+# ── NDK / native ──────────────────────────────────────────────
+*.so
+!**/src/main/jniLibs/**/*.so
+!**/lib/src/main/jniLibs/**/*.so
+
+# ── Secrets / API keys (NEVER commit) ─────────────────────────
+*.env
+.env
+.env.local
+secrets.properties
+google-services.json
+*.pem
+*.key
+gha-creds-*.json
+
+# ── GitHub Actions / CI ───────────────────────────────────────
+*.p12
+*.pfx
+secrets.tar
+secrets.tar.gpg
+
+# ── macOS / Windows / Linux cruft ─────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── Node / web tooling (for any docs-site or preview) ─────────
+node_modules/
+.next/
+dist/
+.cache/
+
+# ── Python (for any ML / data scripts) ────────────────────────
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ── Rust (for adblock-rust native build) ──────────────────────
+target/
+Cargo.lock
+
+# ── Reverb-specific: generated / runtime ──────────────────────
+# Downloaded LLM models (large, regenerable)
+*.litertlm
+*.tflite
+*.gguf
+!**/assets/**/*.tflite
+# Downloaded filter lists (regenerable, refreshed daily)
+adlists-cache/
+# Downloaded extension APKs
+extensions-cache/
+# Local log dumps
+session-logs/raw/
+# Local Room DB snapshots (for debug only)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ── Backups that SHOULD be committed (session logs, memories) ─
+# We DO want: session-logs/*.md, memories/*.md, research/*.md
+# These are explicitly NOT ignored.

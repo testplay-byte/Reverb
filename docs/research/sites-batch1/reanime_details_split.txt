@@ -1,0 +1,1191 @@
+<!doctype html>
+
+
+<html lang="en" dir="ltr" class="dark" style="background: #000">
+
+	<head>
+
+		<meta charset="utf-8" />
+
+
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+		/>
+
+
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+
+		<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+
+		<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<link rel="manifest" href="/manifest.json" />
+
+		<meta name="theme-color" content="#000000" />
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+		<!--12qhfyh-->
+<!---->
+<!--1byo1a9-->
+<meta name="description" content="Watch [Mini] Smoking Behind the Supermarket with You free online on Re:ANIME. Stream Comedy, Romance, Slice of Life anime with 12 episodes in HD with English subs and dubs on reanime.to."/>
+ <meta name="keywords" content="[Mini] Smoking Behind the Supermarket with You, watch [Mini] Smoking Behind the Supermarket with You online free, Comedy, Romance, Slice of Life, reanime, reanime.to"/>
+ <link rel="canonical" href="https://reanime.to/anime/mini-smoking-behind-the-supermarket-with-you-skykax"/>
+ <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+ <meta property="og:type" content="video.tv_show"/>
+ <meta property="og:site_name" content="Re:ANIME"/>
+ <meta property="og:url" content="https://reanime.to/anime/mini-smoking-behind-the-supermarket-with-you-skykax"/>
+ <meta property="og:title" content="[Mini] Smoking Behind the Supermarket with You (2026) - Watch Online Free | Re:ANIME"/>
+ <meta property="og:description" content="Watch [Mini] Smoking Behind the Supermarket with You free online on Re:ANIME. Stream Comedy, Romance, Slice of Life anime with 12 episodes in HD with English subs and dubs on reanime.to."/>
+ <meta property="og:image" content="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196187-cXhET893v3Ag.png"/>
+ <meta name="twitter:card" content="summary_large_image"/>
+ <meta name="twitter:title" content="[Mini] Smoking Behind the Supermarket with You (2026) - Watch Online Free | Re:ANIME"/>
+ <meta name="twitter:description" content="Watch [Mini] Smoking Behind the Supermarket with You free online on Re:ANIME. Stream Comedy, Romance, Slice of Life anime with 12 episodes in HD with English subs and dubs on reanime.to."/>
+ <meta name="twitter:image" content="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196187-cXhET893v3Ag.png"/>
+<!---->
+<title>
+[Mini] Smoking Behind the Supermarket with You (2026) - Watch Online Free | Re:ANIME</title>
+
+		<link href="../assets/immutable/assets/UserBadges.BY2pSQJE.css" rel="stylesheet">
+
+		<link href="../assets/immutable/assets/input.DXi4jqmH.css" rel="stylesheet">
+
+		<link href="../assets/immutable/assets/0.CoCfJ9X-.css" rel="stylesheet">
+
+		<link href="../assets/immutable/assets/calendar-caption.CgEdSJtQ.css" rel="stylesheet">
+
+		<link href="../assets/immutable/assets/nodes_7.DNyP-qYQ.css" rel="stylesheet">
+
+	</head>
+
+
+	<body style="background: #000">
+
+		<div id="app" class="flex min-h-[100dvh] flex-col">
+<!--[-->
+<!--[0-->
+<!--[-->
+<!--[-1-->
+<!--]-->
+ <div class="flex min-h-[100dvh] flex-col c-amklmg">
+<!--[0-->
+<!--[-1-->
+<!--]-->
+ <header class="fixed top-0 right-0 left-0 z-[10000] border-b c-dzmmyo" style="border-color: rgba(255, 255, 255, 0)">
+<div class="absolute inset-0 z-[-1] bg-black/80 backdrop-blur-2xl c-dzmmyo" style="opacity: 0;">
+</div>
+ <div class="pointer-events-none absolute inset-y-0 left-0 z-[-2] w-64 bg-gradient-to-r from-black/80 to-transparent md:w-[400px] c-dzmmyo" style="opacity: 1; -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%); mask-image: linear-gradient(to bottom, black 50%, transparent 100%);">
+</div>
+ <div class="pointer-events-none absolute inset-y-0 right-0 z-[-2] w-48 bg-gradient-to-l from-black/80 to-transparent md:w-64 c-dzmmyo" style="opacity: 1; -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%); mask-image: linear-gradient(to bottom, black 50%, transparent 100%);">
+</div>
+ <div class="relative z-10 flex w-full items-center justify-between py-3 pr-4 pl-6 c-dzmmyo">
+<div class="flex items-center gap-4 sm:gap-6 c-dzmmyo">
+<a href="/home" class="group -mr-2 -ml-2 flex items-center sm:-mr-4 sm:-ml-3 c-dzmmyo">
+<img src="/logo.png" alt="Re:ANIME" class="h-12 w-auto transition-transform duration-300 group-hover:scale-102 sm:h-16 c-dzmmyo"/>
+</a>
+ <button class="hidden min-w-[320px] items-center gap-3 rounded-xl border border-white/20 bg-black/40 px-4 py-2.5 text-left text-gray-300 backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-black/60 hover:text-white sm:flex c-dzmmyo">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-search size-5 text-gray-400 transition-colors group-hover:text-primary">
+<!--[-->
+<!---->
+<path d="m21 21-4.34-4.34">
+<!---->
+</path>
+<!---->
+<!---->
+<circle cx="11" cy="11" r="8">
+<!---->
+</circle>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!---->
+ <span class="text-base font-medium c-dzmmyo">
+Search anime...</span>
+ <div class="ml-auto flex items-center gap-1 text-xs text-gray-500 c-dzmmyo">
+<kbd class="rounded border border-white/20 bg-white/10 px-2 py-1 text-xs font-medium c-dzmmyo">
+⌘</kbd>
+ <kbd class="rounded border border-white/20 bg-white/10 px-2 py-1 text-xs font-medium c-dzmmyo">
+S</kbd>
+</div>
+</button>
+</div>
+ <div class="flex items-center gap-1 c-dzmmyo">
+<button class="rounded-xl p-2.5 text-gray-400 transition-all duration-300 hover:bg-white/10 hover:text-white sm:hidden c-dzmmyo" aria-label="Search">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-search size-6">
+<!--[-->
+<!---->
+<path d="m21 21-4.34-4.34">
+<!---->
+</path>
+<!---->
+<!---->
+<circle cx="11" cy="11" r="8">
+<!---->
+</circle>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!---->
+</button>
+ <!--[-1-->
+<button class="rounded-md bg-gradient-to-r from-primary to-primary/80 px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 c-dzmmyo">
+Sign In</button>
+<!--]-->
+</div>
+</div>
+</header>
+ <!--[-1-->
+<!--]-->
+<!---->
+<!---->
+ <aside class="fixed z-40 hidden lg:block left-4 top-1/2 -translate-y-1/2 -translate-x-[calc(100%+2rem)] ">
+<div role="toolbar" aria-label="Navigation dock" tabindex="-1" class="relative flex flex-col items-center gap-3 rounded-full border border-white/[0.08] bg-[#0a0a0a]/90 p-3 shadow-2xl backdrop-blur-3xl cursor-grab">
+<!--[-1-->
+<!--]-->
+ <!--[-->
+<button class="group relative z-10 flex size-[42px] items-center justify-center rounded-full transition-all duration-300 text-white/40 hover:bg-white/5 hover:text-white/90" title="Home">
+<div class="relative z-10 flex items-center justify-center" style="transform:rotate(0deg)">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-house size-[20px] transition-transform duration-300 group-hover:scale-110">
+<!--[-->
+<!---->
+<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <div style="transform:rotate(0deg)" class="pointer-events-none absolute left-full z-50 ml-4 rounded-lg border border-white/[0.08] bg-[#0a0a0a]/90 px-3 py-1.5 text-[11px] font-semibold tracking-wide whitespace-nowrap text-white opacity-0 shadow-2xl backdrop-blur-3xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-1 group-hover:opacity-100">
+Home</div>
+</button>
+<button class="group relative z-10 flex size-[42px] items-center justify-center rounded-full transition-all duration-300 text-white/40 hover:bg-white/5 hover:text-white/90" title="Search">
+<div class="relative z-10 flex items-center justify-center" style="transform:rotate(0deg)">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-search size-[20px] transition-transform duration-300 group-hover:scale-110">
+<!--[-->
+<!---->
+<path d="m21 21-4.34-4.34">
+<!---->
+</path>
+<!---->
+<!---->
+<circle cx="11" cy="11" r="8">
+<!---->
+</circle>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <div style="transform:rotate(0deg)" class="pointer-events-none absolute left-full z-50 ml-4 rounded-lg border border-white/[0.08] bg-[#0a0a0a]/90 px-3 py-1.5 text-[11px] font-semibold tracking-wide whitespace-nowrap text-white opacity-0 shadow-2xl backdrop-blur-3xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-1 group-hover:opacity-100">
+Search</div>
+</button>
+<button class="group relative z-10 flex size-[42px] items-center justify-center rounded-full transition-all duration-300 text-white/40 hover:bg-white/5 hover:text-white/90" title="Schedule">
+<div class="relative z-10 flex items-center justify-center" style="transform:rotate(0deg)">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-calendar size-[20px] transition-transform duration-300 group-hover:scale-110">
+<!--[-->
+<!---->
+<path d="M8 2v4">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M16 2v4">
+<!---->
+</path>
+<!---->
+<!---->
+<rect width="18" height="18" x="3" y="4" rx="2">
+<!---->
+</rect>
+<!---->
+<!---->
+<path d="M3 10h18">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <div style="transform:rotate(0deg)" class="pointer-events-none absolute left-full z-50 ml-4 rounded-lg border border-white/[0.08] bg-[#0a0a0a]/90 px-3 py-1.5 text-[11px] font-semibold tracking-wide whitespace-nowrap text-white opacity-0 shadow-2xl backdrop-blur-3xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-1 group-hover:opacity-100">
+Schedule</div>
+</button>
+<button class="group relative z-10 flex size-[42px] items-center justify-center rounded-full transition-all duration-300 text-white/40 hover:bg-white/5 hover:text-white/90" title="Community">
+<div class="relative z-10 flex items-center justify-center" style="transform:rotate(0deg)">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-users size-[20px] transition-transform duration-300 group-hover:scale-110">
+<!--[-->
+<!---->
+<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M16 3.128a4 4 0 0 1 0 7.744">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M22 21v-2a4 4 0 0 0-3-3.87">
+<!---->
+</path>
+<!---->
+<!---->
+<circle cx="9" cy="7" r="4">
+<!---->
+</circle>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <div style="transform:rotate(0deg)" class="pointer-events-none absolute left-full z-50 ml-4 rounded-lg border border-white/[0.08] bg-[#0a0a0a]/90 px-3 py-1.5 text-[11px] font-semibold tracking-wide whitespace-nowrap text-white opacity-0 shadow-2xl backdrop-blur-3xl transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-1 group-hover:opacity-100">
+Community</div>
+</button>
+<!--]-->
+ <div class="h-px w-6 bg-white/[0.08]">
+</div>
+ <!--[-1-->
+<!--]-->
+ <button class="group relative z-10 flex size-[42px] items-center justify-center rounded-full transition-all duration-300 text-gray-400 hover:bg-white/10 hover:text-white" title="Settings">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-settings size-[18px]" style="transform:rotate(0deg)">
+<!--[-->
+<!---->
+<path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915">
+<!---->
+</path>
+<!---->
+<!---->
+<circle cx="12" cy="12" r="3">
+<!---->
+</circle>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!---->
+ <div style="transform:rotate(0deg)" class="pointer-events-none absolute left-full z-50 ml-3 rounded-lg border border-white/[0.08] bg-[#0a0a0a]/90 px-2.5 py-1.5 text-xs whitespace-nowrap text-white opacity-0 shadow-lg backdrop-blur-3xl transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
+Settings</div>
+</button>
+ <a href="https://restatus.me/" target="_blank" rel="noopener noreferrer" class="group relative z-10 flex size-[42px] items-center justify-center rounded-full transition-all duration-300 text-gray-400 hover:bg-white/10 hover:text-white" title="Status">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-activity size-[18px]" style="transform:rotate(0deg)">
+<!--[-->
+<!---->
+<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!---->
+ <div style="transform:rotate(0deg)" class="pointer-events-none absolute left-full z-50 ml-3 rounded-lg border border-white/[0.08] bg-[#0a0a0a]/90 px-2.5 py-1.5 text-xs whitespace-nowrap text-white opacity-0 shadow-lg backdrop-blur-3xl transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
+Status</div>
+</a>
+ <div class="h-px w-6 bg-white/[0.08]">
+</div>
+ <!--[-1-->
+<!--]-->
+ <!--[-1-->
+<button class="group relative flex size-11 items-center justify-center rounded-lg text-gray-400 transition-all duration-300 hover:bg-white/10 hover:text-white" title="Hide dock">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-chevron-left size-5 transition-all duration-300 group-hover:scale-110" style="transform:rotate(0deg)">
+<!--[-->
+<!---->
+<path d="m15 18-6-6 6-6">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!---->
+ <div style="transform:rotate(0deg)" class="pointer-events-none absolute left-full z-50 ml-3 rounded-lg border border-white/[0.08] bg-[#0a0a0a]/90 px-2.5 py-1.5 text-xs whitespace-nowrap text-white opacity-0 shadow-lg backdrop-blur-3xl transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
+Hide</div>
+</button>
+<!--]-->
+</div>
+</aside>
+ <!--[0-->
+<div class="fixed top-1/2 left-0 z-40 hidden -translate-y-1/2 flex-col items-start gap-0.5 lg:flex">
+<button class="flex h-20 w-8 items-center justify-center rounded-r-lg border-y border-r border-white/[0.08] bg-[#0a0a0a]/90 text-gray-400 shadow-lg backdrop-blur-3xl transition-all duration-500 ease-out hover:w-10 hover:bg-[#0a0a0a]/98 hover:text-white">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-chevron-right size-5">
+<!--[-->
+<!---->
+<path d="m9 18 6-6-6-6">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!---->
+</button>
+ <button class="flex h-8 w-8 items-center justify-center rounded-r-lg border-y border-r border-white/[0.08] bg-[#0a0a0a]/90 shadow-lg backdrop-blur-3xl transition-all duration-300 hover:w-10 hover:bg-[#0a0a0a]/98 hover:text-white text-gray-400" title="Lock dock hidden">
+<!--[-1-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-lock-open size-3.5">
+<!--[-->
+<!---->
+<rect width="18" height="11" x="3" y="11" rx="2" ry="2">
+<!---->
+</rect>
+<!---->
+<!---->
+<path d="M7 11V7a5 5 0 0 1 9.9-1">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+</button>
+ <!--[-1-->
+<!--]-->
+ <a href="https://restatus.me/" target="_blank" rel="noopener noreferrer" class="flex h-8 w-8 items-center justify-center rounded-r-lg border-y border-r border-white/[0.08] bg-[#0a0a0a]/90 text-gray-400 shadow-lg backdrop-blur-3xl transition-all duration-300 hover:w-10 hover:bg-[#0a0a0a]/98 hover:text-white" title="Status">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-activity size-3.5">
+<!--[-->
+<!---->
+<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!---->
+</a>
+</div>
+<!--]-->
+<!---->
+<!--]-->
+ <main class="flex-1 pt-16 pb-0 c-amklmg">
+<!--[0-->
+<!--[-->
+<!--[-->
+<!--[-->
+<!---->
+<!--[-->
+<!--[1-->
+<div class="relative -mt-16 flex min-h-screen w-full flex-col items-center gap-5 px-4 pt-16 md:px-12">
+<div class="animate-fade-in absolute top-0 left-0 w-full c-1ndqx91">
+<div class="absolute inset-0 z-10 h-[280px] w-full bg-gradient-to-t from-black from-10% to-transparent">
+</div>
+ <img src="https://s4.anilist.co/file/anilistcdn/media/anime/banner/196187-Z9dV6uotmKjM.jpg" alt="banner" class="absolute top-0 left-0 z-0 h-[250px] w-screen object-cover blur-[2px] brightness-[80%]"/>
+</div>
+ <div class="z-30 flex w-full flex-col gap-5 duration-700 lg:max-w-screen-xl lg:px-0 xl:max-w-screen-2xl">
+<div class="mt-[60px] flex w-full flex-col gap-6 md:mt-[120px] md:flex-row md:items-stretch">
+<div class="animate-fade-in-up flex flex-col gap-6 md:w-[250px] md:flex-shrink-0 c-1ndqx91" style="animation-delay: 100ms;">
+<div class="flex flex-shrink-0 justify-center md:block">
+<img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196187-cXhET893v3Ag.png" alt="[Mini] Smoking Behind the Supermarket with You" class="h-[350px] w-[250px] rounded-lg object-cover shadow-lg" onerror="this.__e=event"/>
+</div>
+ <div class="hidden flex-1 rounded-lg border border-zinc-800 bg-zinc-900/50 p-4 text-white shadow md:block">
+<div class="flex h-max flex-col gap-4 select-none">
+<div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Type</p>
+ <span class="text-sm text-gray-300">
+ANIME</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Episodes</p>
+ <span class="text-sm text-gray-300">
+12</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Duration</p>
+ <span class="text-sm text-gray-300">
+N/A min</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Status</p>
+ <span class="text-sm text-gray-300">
+Finished</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Start Date</p>
+ <span class="text-sm text-gray-300">
+2026-06-03</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Season</p>
+ <span class="text-sm text-gray-300">
+Summer
+										2026</span>
+</div>
+ <!--[-1-->
+<!--]-->
+</div>
+</div>
+</div>
+ <div class="mt-4 flex min-w-0 flex-grow flex-col gap-6 md:mt-0">
+<div class="animate-fade-in-up relative z-10 flex flex-col gap-4 c-1ndqx91" style="animation-delay: 200ms;">
+<div class="flex flex-col gap-2">
+<h1 class="text-center text-lg font-bold text-white md:text-left md:text-2xl">
+[Mini] Smoking Behind the Supermarket with You</h1>
+ <!--[0-->
+<h2 class="mx-auto w-3/4 text-center text-sm font-bold italic md:w-full md:text-left md:text-lg" style="color: var(--primary);">
+[Mini]  Super no Ura de Yani Suu Futari</h2>
+<!--]-->
+</div>
+ <!--[0-->
+<div class="relative">
+<div class="absolute top-0 z-30 flex h-full w-full items-end justify-center bg-gradient-to-b from-transparent to-black to-95% transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] opacity-100 c-1ndqx91">
+<button type="button" class="w-full py-1 text-center font-bold text-gray-200">
+Read More</button>
+</div>
+ <div class="relative overflow-hidden transition-[max-height] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]" style="max-height: 150px">
+<div class="pb-1">
+<p class="mx-2 text-center text-sm leading-6 font-light text-white md:mx-0 md:text-start md:text-base">
+Episodes 1-6 had an early release by ABEMA and Crunchyroll on June 3rd, 2026 in a mini-episode batch format that splits 6 episodes into 12, ahead of the TV broadcast which starts on July 9th, 2026</p>
+ <!--[-1-->
+<!--]-->
+</div>
+</div>
+</div>
+<!--]-->
+ <!--[0-->
+<div class="flex flex-wrap justify-center gap-2 md:justify-start">
+<!--[-->
+<a href="/search?genre=Comedy" class="genre-tag rounded-full px-2 py-1 text-sm transition-all c-1ndqx91">
+Comedy</a>
+<a href="/search?genre=Romance" class="genre-tag rounded-full px-2 py-1 text-sm transition-all c-1ndqx91">
+Romance</a>
+<a href="/search?genre=Slice%20of%20Life" class="genre-tag rounded-full px-2 py-1 text-sm transition-all c-1ndqx91">
+Slice of Life</a>
+<!--]-->
+</div>
+<!--]-->
+ <div class="flex flex-wrap items-center justify-center gap-3 md:justify-start">
+<!--[0-->
+<a href="/watch/mini-smoking-behind-the-supermarket-with-you-skykax" class="inline-flex h-9 items-center gap-2 rounded-md px-4 py-2 text-sm font-medium shadow transition-all" style="background: var(--primary); color: black;">
+<svg class="h-4 w-4" viewBox="0 0 24 24" style="fill: black;">
+<path d="M8 5v14l11-7z">
+</path>
+</svg>
+ Watch Now</a>
+<!--]-->
+ <div class="relative inline-block">
+<button class="inline-flex h-9 items-center gap-2 rounded-md border border-zinc-700 bg-transparent px-3 py-2 text-sm font-medium text-white transition-all hover:bg-zinc-800 disabled:opacity-50">
+<!--[-1-->
+<!--[-1-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-book-marked h-4 w-4">
+<!--[-->
+<!---->
+<path d="M10 2v8l3-3 3 3V2">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <span>
+Add to List</span>
+ <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-chevron-down h-3 w-3 transition-transform">
+<!--[-->
+<!---->
+<path d="m6 9 6 6 6-6">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!---->
+<!--]-->
+</button>
+<!---->
+ <!--[-1-->
+<!--]-->
+</div>
+<!---->
+ <button class="inline-flex h-9 items-center gap-2 rounded-md border border-zinc-700 bg-transparent px-3 py-2 text-sm font-medium text-white transition-all hover:bg-zinc-800">
+<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8">
+</path>
+<polyline points="16,6 12,2 8,6">
+</polyline>
+<line x1="12" y1="2" x2="12" y2="15">
+</line>
+</svg>
+ Share</button>
+ <!--[-1-->
+<!--]-->
+</div>
+ <div class="flex flex-wrap justify-center gap-2 md:justify-start">
+<!--[0-->
+<div class="rounded-md border border-zinc-700 bg-zinc-800/30 px-2 py-1 text-xs font-medium text-white">
+TV_SHORT</div>
+<!--]-->
+ <!--[0-->
+<div class="rounded-md border border-zinc-700 bg-zinc-800/30 px-2 py-1 text-xs font-medium text-white">
+12 episodes</div>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+ <!--[-1-->
+<!--]-->
+ <!--[0-->
+<div class="rounded-md border border-zinc-700 bg-zinc-800/30 px-2 py-1 text-xs font-medium text-white">
+Finished</div>
+<!--]-->
+ <!--[0-->
+<div class="rounded-md border border-zinc-700 bg-zinc-800/30 px-2 py-1 text-xs font-medium text-white">
+Summer
+										2026</div>
+<!--]-->
+</div>
+</div>
+ <div class="animate-fade-in-up w-full overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/50 p-4 text-white shadow md:hidden c-1ndqx91" style="animation-delay: 300ms;">
+<div role="region" aria-label="Anime information" class="flex gap-x-6 overflow-x-hidden pb-2 select-none md:pb-0" style="cursor: grab;">
+<div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Type</p>
+ <span class="text-sm whitespace-nowrap text-gray-300">
+ANIME</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Episodes</p>
+ <span class="text-sm whitespace-nowrap text-gray-300">
+12</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Duration</p>
+ <span class="text-sm whitespace-nowrap text-gray-300">
+N/A min</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Status</p>
+ <span class="text-sm whitespace-nowrap text-gray-300">
+Finished</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Start Date</p>
+ <span class="text-sm whitespace-nowrap text-gray-300">
+2026-06-03</span>
+</div>
+ <div class="flex flex-col gap-1">
+<p class="text-xs font-medium text-gray-500">
+Season</p>
+ <span class="text-sm whitespace-nowrap text-gray-300">
+Summer
+										2026</span>
+</div>
+ <!--[-1-->
+<!--]-->
+</div>
+</div>
+ <div class="animate-fade-in-up w-full rounded-xl border border-zinc-800 bg-zinc-900/50 p-4 shadow c-1ndqx91" style="animation-delay: 400ms;">
+<!--[0-->
+<div class="mb-6">
+<h2 class="mb-2 text-lg font-semibold text-white">
+Alternative Titles</h2>
+ <div class="flex flex-wrap gap-2">
+<!--[-->
+<span class="rounded bg-zinc-800/50 px-2 py-1 text-sm text-gray-400">
+Behind the supermarket, smoking with you.</span>
+<span class="rounded bg-zinc-800/50 px-2 py-1 text-sm text-gray-400">
+ヤニすう</span>
+<span class="rounded bg-zinc-800/50 px-2 py-1 text-sm text-gray-400">
+YaniSuu</span>
+<span class="rounded bg-zinc-800/50 px-2 py-1 text-sm text-gray-400">
+Paląc z tobą na tyłach sklepu</span>
+<!--]-->
+</div>
+</div>
+<!--]-->
+ <!--[0-->
+<div class="mb-6">
+<h2 class="mb-2 text-lg font-semibold text-white">
+Studios</h2>
+ <div class="flex flex-wrap gap-2">
+<!--[-->
+<a href="/search?studio=Asahi%20Production" class="rounded bg-zinc-800/50 px-3 py-1.5 text-sm text-gray-300 transition-colors hover:bg-zinc-700/50 hover:text-white">
+Asahi Production</a>
+<a href="/search?studio=Asmik%20Ace" class="rounded bg-zinc-800/50 px-3 py-1.5 text-sm text-gray-300 transition-colors hover:bg-zinc-700/50 hover:text-white">
+Asmik Ace</a>
+<!--]-->
+</div>
+</div>
+<!--]-->
+ <div class="mb-6">
+<h2 class="mb-4 text-lg font-semibold text-white">
+Stats</h2>
+ <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+<div class="flex flex-col items-center rounded-lg bg-zinc-800/50 p-3">
+<span class="text-xs text-gray-400">
+Episodes</span>
+ <span class="text-xl font-bold text-white">
+12</span>
+</div>
+ <div class="flex flex-col items-center rounded-lg bg-zinc-800/50 p-3">
+<span class="text-xs text-gray-400">
+Duration</span>
+ <span class="text-xl font-bold text-white">
+N/Am</span>
+</div>
+ <div class="flex flex-col items-center rounded-lg bg-zinc-800/50 p-3">
+<span class="text-xs text-gray-400">
+Subbed</span>
+ <span class="text-xl font-bold text-white">
+12</span>
+</div>
+ <div class="flex flex-col items-center rounded-lg bg-zinc-800/50 p-3">
+<span class="text-xs text-gray-400">
+Dubbed</span>
+ <span class="text-xl font-bold text-white">
+N/A</span>
+</div>
+</div>
+</div>
+ <!--[0-->
+<div class="mt-6 border-t border-zinc-800/80 pt-6">
+<div class="mb-4 flex items-center justify-between">
+<div class="flex items-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2 h-5 w-5 text-primary" fill="currentColor">
+<path fill="none" d="M0 0h24v24H0z">
+</path>
+<path d="M21 3H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2H3V5h18v8h2V5a2 2 0 0 0-2-2zm-8 7V7h-2v3H8v2h3v3h2v-3h3v-2h-3zm11 8-4.5 4.5L18 21l3-3-3-3 1.5-1.5L24 18z">
+</path>
+</svg>
+ <h3 class="text-sm font-semibold uppercase tracking-wider text-white">
+SEASON</h3>
+</div>
+ <span class="text-xs font-semibold text-zinc-500">
+1 ENTRY</span>
+</div>
+ <div class="relative w-full">
+<!--[-->
+<div data-slot="carousel" class="relative w-full group/carousel" role="region" aria-roledescription="carousel">
+<!--[-->
+<div data-slot="carousel-content" class="overflow-hidden">
+<div class="flex -ms-4" data-embla-container="">
+<!--[-->
+<!--[-->
+<div data-slot="carousel-item" role="group" aria-roledescription="slide" class="min-w-0 grow-0 ps-4 basis-auto pl-4 shrink-0 w-[186px]" data-embla-slide="">
+<a href="/anime/mini-smoking-behind-the-supermarket-with-you-skykax" class="group relative flex h-[80px] w-full items-center justify-center overflow-hidden rounded-[10px] transition-all duration-300 hover:scale-[1.02] focus:scale-[1.02] focus:ring-2 focus:ring-primary focus:outline-none focus:z-10 active-season-card border-2 cursor-default pointer-events-none" style="border-color: var(--primary); box-shadow: 0 0 20px color-mix(in oklch, var(--primary) 20%, transparent);">
+<div class="absolute inset-0 z-0">
+<img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196187-cXhET893v3Ag.png" alt="[Mini]  Super no Ura de Yani Suu Futari" class="h-full w-full object-cover blur-[2px] brightness-[0.45] transition-all duration-300 group-hover:brightness-[0.55] " loading="lazy"/>
+</div>
+ <div class="pointer-events-none absolute inset-0 z-10 opacity-40 transition-opacity duration-300 group-hover:opacity-50 " style="background-image: radial-gradient(circle, #ffffff33 1.2px, transparent 1.2px); background-size: 6px 6px;">
+</div>
+ <!--[-1-->
+<!--]-->
+ <div class="relative z-20 w-full max-w-full overflow-hidden px-3 text-center transition-opacity duration-300 opacity-100">
+<span class="block text-[9px] font-bold tracking-widest text-primary truncate drop-shadow-lg" style="text-shadow: 0 1px 3px rgba(0,0,0,0.9);">
+SEASON 1</span>
+ <h4 class="mt-0.5 text-xs font-semibold tracking-wide transition-colors duration-300 text-zinc-100 group-hover:text-white line-clamp-1 drop-shadow-lg" style="text-shadow: 0 1px 3px rgba(0,0,0,0.8);">
+[Mini] Smoking Behind the Supermarket with You</h4>
+ <div class="mt-0.5 flex items-center justify-center gap-1.5 text-[9px] font-medium text-zinc-400" style="text-shadow: 0 1px 2px rgba(0,0,0,0.9);">
+<span>
+TV_SHORT</span>
+ <!--[0-->
+<span>
+•</span>
+ <span>
+2026</span>
+<!--]-->
+</div>
+</div>
+</a>
+<!---->
+</div>
+<!--]-->
+<!--]-->
+<!---->
+</div>
+</div>
+<!--]-->
+ <!--[-->
+<!--[-1-->
+<button data-slot="carousel-previous" class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 bg-clip-padding text-sm font-medium focus-visible:ring-3 active:not-aria-[haspopup]:translate-y-px aria-invalid:ring-3 [&amp;_svg:not([class*='size-'])]:size-4 group/button shrink-0 whitespace-nowrap outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 aria-expanded:bg-muted aria-expanded:text-foreground size-7 in-data-[slot=button-group]:rounded-lg touch-manipulation -start-12 absolute left-2 top-1/2 z-30 -translate-y-1/2 hidden md:flex h-9 w-9 items-center justify-center rounded-full bg-zinc-950/70 border border-zinc-800 text-zinc-300 hover:text-white backdrop-blur hover:bg-zinc-900/90 transition-all opacity-0 group-hover/carousel:opacity-100 shadow-lg" type="button" disabled="" aria-disabled="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-chevron-left">
+<!--[-->
+<!---->
+<path d="m15 18-6-6 6-6">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!---->
+</svg>
+<!---->
+ <span class="sr-only">
+Previous slide</span>
+<!---->
+</button>
+<!--]-->
+<!--]-->
+ <!--[-->
+<!--[-1-->
+<button data-slot="carousel-next" class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 bg-clip-padding text-sm font-medium focus-visible:ring-3 active:not-aria-[haspopup]:translate-y-px aria-invalid:ring-3 [&amp;_svg:not([class*='size-'])]:size-4 group/button shrink-0 whitespace-nowrap outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 aria-expanded:bg-muted aria-expanded:text-foreground size-7 in-data-[slot=button-group]:rounded-lg touch-manipulation -end-12 absolute right-2 top-1/2 z-30 -translate-y-1/2 hidden md:flex h-9 w-9 items-center justify-center rounded-full bg-zinc-950/70 border border-zinc-800 text-zinc-300 hover:text-white backdrop-blur hover:bg-zinc-900/90 transition-all opacity-0 group-hover/carousel:opacity-100 shadow-lg" type="button" disabled="" aria-disabled="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-chevron-right">
+<!--[-->
+<!---->
+<path d="m9 18 6-6-6-6">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!---->
+</svg>
+<!---->
+ <span class="sr-only">
+Next slide</span>
+<!---->
+</button>
+<!--]-->
+<!--]-->
+<!---->
+</div>
+<!--]-->
+</div>
+ <!--[-1-->
+<!--]-->
+</div>
+<!--]-->
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--]-->
+ <!--[-->
+<!--[-->
+<!--[-1-->
+<!--]-->
+<!--]-->
+<!---->
+<!--]-->
+<!---->
+ <!--[-1-->
+<!--]-->
+<!--]-->
+<!---->
+<!---->
+<!---->
+<!--]-->
+<!--]-->
+<!--]-->
+<!--]-->
+<!---->
+</main>
+ <!--[0-->
+<footer class="relative mt-8 border-t border-white/5 bg-black/90 pb-[calc(3rem+env(safe-area-inset-bottom))] backdrop-blur-xl lg:pb-0">
+<div class="relative w-full px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+<div class="max-w-2xl">
+<img src="/logo.png" alt="Re:ANIME" class="mb-2 h-12 w-auto sm:h-16"/>
+ <p class="mt-3 text-xs leading-relaxed text-gray-400 sm:text-sm">
+Your ultimate destination for anime streaming, discussions, and community. Discover, watch,
+				and connect with fellow anime enthusiasts.</p>
+ <div class="mt-4 flex gap-3 sm:mt-6 sm:gap-4">
+<!--[-->
+<a href="#" rel="noopener noreferrer" class="group rounded-lg p-1.5 text-gray-400 transition-all duration-300 hover:bg-primary/10 hover:text-primary sm:p-2" aria-label="Twitter">
+<svg class="size-4 transition-transform duration-300 group-hover:scale-110 sm:size-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+</path>
+</svg>
+</a>
+<a href="https://discord.com/invite/QsqcnsryyK" rel="noopener noreferrer" class="group rounded-lg p-1.5 text-gray-400 transition-all duration-300 hover:bg-primary/10 hover:text-primary sm:p-2" aria-label="Discord">
+<svg class="size-4 transition-transform duration-300 group-hover:scale-110 sm:size-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0003 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9554 2.4189-2.1568 2.4189Z">
+</path>
+</svg>
+</a>
+<a href="https://www.reddit.com/r/reanime" rel="noopener noreferrer" class="group rounded-lg p-1.5 text-gray-400 transition-all duration-300 hover:bg-primary/10 hover:text-primary sm:p-2" aria-label="Reddit">
+<svg class="size-4 transition-transform duration-300 group-hover:scale-110 sm:size-5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.66 7.082c-.798 0-1.44.644-1.44 1.44s.642 1.44 1.44 1.44 1.44-.644 1.44-1.44-.642-1.44-1.44-1.44zm5.76 0c-.798 0-1.44.644-1.44 1.44s.642 1.44 1.44 1.44 1.44-.644 1.44-1.44-.642-1.44-1.44-1.44z">
+</path>
+</svg>
+</a>
+<!--]-->
+</div>
+</div>
+ <div class="mt-4 border-t border-white/10 pt-3 sm:mt-6 sm:pt-4">
+<div class="flex flex-col gap-2 text-xs text-gray-400 sm:text-sm">
+<p>
+© 2026 Re:ANIME. All rights reserved.</p>
+ <p class="text-[10px] leading-relaxed text-gray-500 sm:text-xs">
+Re:ANIME does not store any files on our server, we only link to media hosted on 3rd party
+					services.</p>
+ <div class="flex flex-wrap gap-3 sm:gap-6">
+<!--[-->
+<button class="cursor-pointer border-0 bg-transparent p-0 text-xs text-gray-400 transition-colors duration-300 hover:text-primary sm:text-sm">
+Privacy</button>
+<button class="cursor-pointer border-0 bg-transparent p-0 text-xs text-gray-400 transition-colors duration-300 hover:text-primary sm:text-sm">
+Terms</button>
+<button class="cursor-pointer border-0 bg-transparent p-0 text-xs text-gray-400 transition-colors duration-300 hover:text-primary sm:text-sm">
+Contact</button>
+<button class="cursor-pointer border-0 bg-transparent p-0 text-xs text-gray-400 transition-colors duration-300 hover:text-primary sm:text-sm">
+Status</button>
+<!--]-->
+</div>
+</div>
+</div>
+</div>
+</footer>
+ <!--[-->
+<!--[-->
+<!--[-1-->
+<!--]-->
+<!--]-->
+<!---->
+<!--]-->
+<!---->
+<!--]-->
+</div>
+ <!--[0-->
+<nav class="fixed right-0 bottom-0 left-0 z-[5000] border-t border-white/[0.08] bg-[#0a0a0a]/90 backdrop-blur-3xl lg:hidden">
+<div class="flex items-center justify-around px-2 pt-2 pb-[env(safe-area-inset-bottom)] md:pb-2">
+<!--[-->
+<button class="group relative flex flex-col items-center gap-1 rounded-2xl px-3 pt-2.5 pb-2 transition-all duration-300 text-gray-400 hover:bg-white/10 hover:text-white">
+<div class="relative transition-all duration-300 group-hover:scale-110 ">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-house size-5">
+<!--[-->
+<!---->
+<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <span class="text-xs font-medium transition-colors duration-300">
+Home</span>
+ <!--[-1-->
+<!--]-->
+</button>
+<button class="group relative flex flex-col items-center gap-1 rounded-2xl px-3 pt-2.5 pb-2 transition-all duration-300 text-gray-400 hover:bg-white/10 hover:text-white">
+<div class="relative transition-all duration-300 group-hover:scale-110 ">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-search size-5">
+<!--[-->
+<!---->
+<path d="m21 21-4.34-4.34">
+<!---->
+</path>
+<!---->
+<!---->
+<circle cx="11" cy="11" r="8">
+<!---->
+</circle>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <span class="text-xs font-medium transition-colors duration-300">
+Search</span>
+ <!--[-1-->
+<!--]-->
+</button>
+<button class="group relative flex flex-col items-center gap-1 rounded-2xl px-3 pt-2.5 pb-2 transition-all duration-300 text-gray-400 hover:bg-white/10 hover:text-white">
+<div class="relative transition-all duration-300 group-hover:scale-110 ">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-calendar size-5">
+<!--[-->
+<!---->
+<path d="M8 2v4">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M16 2v4">
+<!---->
+</path>
+<!---->
+<!---->
+<rect width="18" height="18" x="3" y="4" rx="2">
+<!---->
+</rect>
+<!---->
+<!---->
+<path d="M3 10h18">
+<!---->
+</path>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <span class="text-xs font-medium transition-colors duration-300">
+Schedule</span>
+ <!--[-1-->
+<!--]-->
+</button>
+<button class="group relative flex flex-col items-center gap-1 rounded-2xl px-3 pt-2.5 pb-2 transition-all duration-300 text-gray-400 hover:bg-white/10 hover:text-white">
+<div class="relative transition-all duration-300 group-hover:scale-110 ">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-users size-5">
+<!--[-->
+<!---->
+<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M16 3.128a4 4 0 0 1 0 7.744">
+<!---->
+</path>
+<!---->
+<!---->
+<path d="M22 21v-2a4 4 0 0 0-3-3.87">
+<!---->
+</path>
+<!---->
+<!---->
+<circle cx="9" cy="7" r="4">
+<!---->
+</circle>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <span class="text-xs font-medium transition-colors duration-300">
+Community</span>
+ <!--[-1-->
+<!--]-->
+</button>
+<button class="group relative flex flex-col items-center gap-1 rounded-2xl px-3 pt-2.5 pb-2 transition-all duration-300 text-gray-400 hover:bg-white/10 hover:text-white">
+<div class="relative transition-all duration-300 group-hover:scale-110 ">
+<!--[-->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide-icon lucide lucide-settings size-5">
+<!--[-->
+<!---->
+<path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915">
+<!---->
+</path>
+<!---->
+<!---->
+<circle cx="12" cy="12" r="3">
+<!---->
+</circle>
+<!---->
+<!--]-->
+<!--[-->
+<!--[-->
+<!--]-->
+<!--]-->
+</svg>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+</div>
+ <span class="text-xs font-medium transition-colors duration-300">
+Settings</span>
+ <!--[-1-->
+<!--]-->
+</button>
+<!--]-->
+</div>
+</nav>
+<!--]-->
+ <!--[-1-->
+<!--]-->
+<!---->
+ <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false" class="c-tppj9g">
+<!--[-1-->
+<!--]-->
+</section>
+<!---->
+ <!--[-->
+<!--[-->
+<!--[-1-->
+<!--]-->
+<!--]-->
+<!---->
+<!--]-->
+<!---->
+ <!--[-1-->
+<!--]-->
+ <div style="display:none" class="c-amklmg">
+<!--[-->
+<a href="/anime/mini-smoking-behind-the-supermarket-with-you-skykax" class="c-amklmg">
+en</a>
+<a href="/it/anime/mini-smoking-behind-the-supermarket-with-you-skykax" class="c-amklmg">
+it</a>
+<a href="/si/anime/mini-smoking-behind-the-supermarket-with-you-skykax" class="c-amklmg">
+si</a>
+<!--]-->
+</div>
+<!--]-->
+<!--]-->
+ <!--[-1-->
+<!--]-->
+<!--]-->
+
+			
+			<script>
+
+				{
+					__pr_8jcyuu = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../assets/immutable/entry_start.Dv_m9KDm.js"),
+						import("../assets/immutable/entry_app.CtwZWzpJ.js")
+					]).then(([kit, app]) =>
+ {
+						kit.start(app, element, {
+							node_ids: [0, 2, 7],
+							data: [{type:"data",data:{dockPosition:null},uses:{}},null,{type:"data",data:{anime:{anidb_id:0,anilist_id:196187000,anime_id:"mini-smoking-behind-the-supermarket-with-you-skykax",anime_planet_id:"",animecountdown_id:0,animenewsnetwork_id:0,anisearch_id:0,artworks:[],average_score:0,banner_image:"https://s4.anilist.co/file/anilistcdn/media/anime/banner/196187-Z9dV6uotmKjM.jpg",can_request:false,can_watch:true,chapters:0,characters:[{id:281763,name:"Sasaki",role:"MAIN"},{id:281764,name:"Yamada",role:"MAIN"},{id:307811,name:"Gotou",role:"SUPPORTING"},{id:315451,name:"Obata",role:"SUPPORTING"},{id:315452,name:"Oono",role:"SUPPORTING"},{id:315453,name:"Maezawa",role:"SUPPORTING"},{id:319609,name:"Suzuki",role:"SUPPORTING"}],country_of_origin:"JP",cover_image:{color:"#6b1a35",extra_large:"https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196187-cXhET893v3Ag.png",large:"https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196187-cXhET893v3Ag.png",medium:"https://s4.anilist.co/file/anilistcdn/media/anime/cover/small/bx196187-cXhET893v3Ag.png"},description:"Episodes 1-6 had an early release by ABEMA and Crunchyroll on June 3rd, 2026 in a mini-episode batch format that splits 6 episodes into 12, ahead of the TV broadcast which starts on July 9th, 2026",dubbed:0,duration:0,end_date:{day:0,month:0,year:0},episodes_total:12,external_links:[{id:125409,language:"Japanese",site:"Twitter",type:"SOCIAL",url:"https://x.com/yanisuu_anime"},{id:125410,language:"Japanese",site:"Official Site",type:"INFO",url:"https://yanisuu.com/"},{id:156454,language:"",site:"Crunchyroll",type:"STREAMING",url:"https://www.crunchyroll.com/series/GT00378116/smoking-behind-the-supermarket-with-you"}],external_seasons:{tmdb:0,tvdb:0},favourites:1373,format:"TV_SHORT",genres:["Comedy","Romance","Slice of Life"],hashtag:"#ヤニすう",imdb_id:"",is_adult:false,is_licensed:true,is_locked:false,kitsu_id:0,last_episode:6,last_episode_aired_at:"2026-08-13T00:00:00Z",last_updated:"2026-07-09T16:33:44.595Z",livechart_id:0,mal_id:62076000,mal_score:0,mean_score:0,next_airing_episode:{airing_at:"2026-07-09T14:56:00Z",episode:1,time_until_airing:1433157},popularity:56513,rankings:[{all_time:false,context:"most popular",format:"TV",id:12054,rank:20,season:"",type:"POPULAR",year:2026},{all_time:false,context:"most popular",format:"TV",id:12257,rank:3,season:"SUMMER",type:"POPULAR",year:2026}],rating:"PG-13 - Teens 13 or older",recommendation_ids:[],relations:[],requested:false,score_distribution:null,season:"SUMMER",season_year:2026,simkl_id:0,source:"MANGA",staff:[{id:122979,name:"Mio Inoue",role:"Series Composition"},{id:169938,name:"Tomoka Ootaki",role:"Character Design"},{id:169940,name:"Aoi Mori",role:"Director "},{id:170315,name:"ZUTOMAYO",role:"Theme Song Arrangement (OP)"},{id:170315,name:"ZUTOMAYO",role:"Theme Song Performance (OP)"},{id:170316,name:"ACA-NE",role:"Theme Song Composition (OP)"},{id:170316,name:"ACA-NE",role:"Theme Song Lyrics (OP)"},{id:170316,name:"ACA-NE",role:"Theme Song Vocal Performance (OP)"},{id:170323,name:"100kaiOuto",role:"Theme Song Arrangement (OP)"},{id:195697,name:"Masato Suzuki",role:"Director "},{id:204558,name:"Kouhei Yoshida",role:"Sound Director"},{id:205009,name:"Sayaka Aoki",role:"Music"},{id:221243,name:"Shin Kouno",role:"Music"},{id:229305,name:"Jinushi",role:"Original Creator"},{id:296821,name:"ESME MORI",role:"Theme Song Arrangement (ED)"},{id:340299,name:"imase",role:"Theme Song Lyrics (ED)"},{id:340299,name:"imase",role:"Theme Song Performance (ED)"},{id:340299,name:"imase",role:"Theme Song Composition (ED)"}],start_date:{day:3,month:6,year:2026},status:"FINISHED",status_distribution:null,studios:[{id:406,is_main:true,name:"Asahi Production"},{id:517,is_main:false,name:"Asmik Ace"}],sub_release:{airing_at:"2026-07-16T18:00:00Z",episode:2},subbed:12,synonyms:["Behind the supermarket, smoking with you.","ヤニすう","YaniSuu","Paląc z tobą na tyłach sklepu"],tags:[{category:"Demographic",description:"Target demographic is adult males.",id:50,is_adult:false,is_general_spoiler:false,is_media_spoiler:false,name:"Seinen",rank:95},{category:"Cast-Main Cast",description:"Main cast is mostly composed of characters above a high school age.",id:109,is_adult:false,is_general_spoiler:false,is_media_spoiler:false,name:"Primarily Adult Cast",rank:85},{category:"Setting-Scene",description:"Centers around the activities of a certain occupation.",id:145,is_adult:false,is_general_spoiler:false,is_media_spoiler:false,name:"Work",rank:78},{category:"Theme-Romance",description:"Prominently features romantic relations between people with a significant age difference.",id:138,is_adult:false,is_general_spoiler:true,is_media_spoiler:false,name:"Age Gap",rank:77},{category:"Theme-Romance",description:"Prominently features a romance between a man and a woman, not inherently sexual.",id:1045,is_adult:false,is_general_spoiler:false,is_media_spoiler:false,name:"Heterosexual",rank:76},{category:"Setting-Scene",description:"Predominantly features a convenience store.",id:1607,is_adult:false,is_general_spoiler:false,is_media_spoiler:false,name:"Konbini",rank:72},{category:"Theme-Slice of Life",description:"Primary aim is to heal the audience through serene depictions of characters' daily lives.",id:81,is_adult:false,is_general_spoiler:false,is_media_spoiler:false,name:"Iyashikei",rank:70},{category:"Setting-Scene",description:"Features people who work in a business office.",id:1571,is_adult:false,is_general_spoiler:false,is_media_spoiler:false,name:"Office",rank:65},{category:"Setting-Scene",description:"Partly or completely set in a city.",id:595,is_adult:false,is_general_spoiler:false,is_media_spoiler:false,name:"Urban",rank:60}],themoviedb_id:0,title:{english:"[Mini] Smoking Behind the Supermarket with You",native:"[Mini]  スーパーの裏でヤニ吸うふたり",romaji:"[Mini]  Super no Ura de Yani Suu Futari",user_preferred:"Super no Ura de Yani Suu Futari"},trailer:{id:"aOOwNK6Ul6E",site:"youtube",thumbnail:"https://i.ytimg.com/vi/aOOwNK6Ul6E/hqdefault.jpg"},trending:105,tvdb_id:0,type:"ANIME",updated_at:"2026-06-23T00:10:20Z",volumes:0},episodes:{data:[{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-1",episode_number:1,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 1",title_japanese:"",title_romanji:"",updated_at:"2026-06-23T00:52:32.945Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-2",episode_number:2,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 2",title_japanese:"",title_romanji:"",updated_at:"2026-06-23T00:52:42.054Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-3",episode_number:3,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 3",title_japanese:"",title_romanji:"",updated_at:"2026-06-23T00:53:01.925Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-4",episode_number:4,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 4",title_japanese:"",title_romanji:"",updated_at:"2026-06-23T00:53:09.102Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-5",episode_number:5,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 5",title_japanese:"",title_romanji:"",updated_at:"2026-06-23T00:53:35.23Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-6",episode_number:6,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 6",title_japanese:"",title_romanji:"",updated_at:"2026-06-23T00:53:28.031Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-7",episode_number:7,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 7",title_japanese:"",title_romanji:"Episode 7",updated_at:"2026-06-06T00:17:46.571Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-8",episode_number:8,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 8",title_japanese:"",title_romanji:"Episode 8",updated_at:"2026-06-06T00:17:48.931Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-9",episode_number:9,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 9",title_japanese:"",title_romanji:"Episode 9",updated_at:"2026-06-06T00:17:56.408Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-10",episode_number:10,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 10",title_japanese:"",title_romanji:"Episode 10",updated_at:"2026-06-06T00:17:59.166Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-11",episode_number:11,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 11",title_japanese:"",title_romanji:"Episode 11",updated_at:"2026-06-06T00:18:03.587Z",url:""},{aired:"2026-06-03T00:00:00Z",description:"",duration:0,episodeId:"ep-12",episode_number:12,is_filler:false,is_recap:false,site:"MyAnimeList",thumbnail:"",title:"Episode 12",title_japanese:"",title_romanji:"Episode 12",updated_at:"2026-06-06T00:18:06.951Z",url:""}],limit:100,offset:0,source:"jikan",total:12,totalPages:1},error:null,seo:{title:"[Mini] Smoking Behind the Supermarket with You (2026) - Watch Online Free | Re:ANIME",description:"Watch [Mini] Smoking Behind the Supermarket with You free online on Re:ANIME. Stream Comedy, Romance, Slice of Life anime with 12 episodes in HD with English subs and dubs on reanime.to.",keywords:"[Mini] Smoking Behind the Supermarket with You, watch [Mini] Smoking Behind the Supermarket with You online free, Comedy, Romance, Slice of Life, reanime, reanime.to",canonical:"https://reanime.to/anime/mini-smoking-behind-the-supermarket-with-you-skykax",image:"https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196187-cXhET893v3Ag.png",robots:"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}},uses:{search_params:["nid"],params:["slug"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+
+		</div>
+
+		<script>
+
+			if (localStorage.getItem('disable_ads') !== 'true' && window.location.pathname !== '/' && !window.location.pathname.startsWith('/profile')) {
+				(function(s){s.dataset.zone='11123362',s.src='https://llvpn.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+			}
+		</script>
+
+		<script data-cfasync="false">
+
+			(function () {
+				try {
+					if (localStorage.getItem('disable_ads') !== 'true' && window.location.pathname === '/home2') {
+						var s1 = document.createElement('script');
+						s1.setAttribute('data-cfasync', 'false');
+						s1.type = 'text/javascript';
+						s1.src = '//vg.marinedfulmen.com/raTCHE5YxJkqH/142349';
+						document.body.appendChild(s1);
+					}
+				} catch (e) {}
+			})();
+		</script>
+
+	<script>
+(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a18fe7d7c8125e08',t:'MTc4MzY5MDA0NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+
+</html>
+

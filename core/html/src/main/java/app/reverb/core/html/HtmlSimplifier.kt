@@ -44,7 +44,14 @@ object HtmlSimplifier {
                 iframe.remove()
             }
         }
-        doc.getAllComments().forEach { it.remove() }
+        doc.select("comment").remove()
+        // Also walk the tree to remove comment nodes (Jsoup represents them as comment pseudo-elements in newer versions).
+        doc.traverse(object : org.jsoup.select.NodeVisitor {
+            override fun head(node: org.jsoup.nodes.Node, depth: Int) {
+                if (node is org.jsoup.nodes.Comment) node.remove()
+            }
+            override fun tail(node: org.jsoup.nodes.Node, depth: Int) {}
+        })
 
         // 2. Prune attributes.
         doc.allElements.forEach { el ->

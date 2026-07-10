@@ -2,6 +2,7 @@ package app.reverb.adblock
 
 import okhttp3.Interceptor
 import okhttp3.Response
+import okhttp3.ResponseBody.Companion.toResponseBody
 
 /**
  * OkHttp interceptor that blocks ad requests using an [AdMatcher].
@@ -28,7 +29,7 @@ class AdBlockInterceptor(
                 .protocol(okhttp3.Protocol.HTTP_1_1)
                 .code(204)
                 .message("Blocked by Reverb ad-blocker")
-                .body(okhttp3.ResponseBody.create(null, ByteArray(0)))
+                .body(ByteArray(0).toResponseBody())
                 .build()
         }
         return chain.proceed(request)

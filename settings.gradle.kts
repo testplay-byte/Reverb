@@ -24,7 +24,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Reverb"
 
-// Phase 0 modules (spike scope)
+// Phase 1 modules
 include(":app")
 include(":core:common")
 include(":core:network")
@@ -33,3 +33,4 @@ include(":core:video")
 include(":source-api")
 include(":source-universal")
 include(":adblock")
+include(":data")

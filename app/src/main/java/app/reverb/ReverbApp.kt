@@ -7,18 +7,17 @@ import app.reverb.core.common.Loggers
 import app.reverb.core.common.ReverbLog
 import app.reverb.core.network.AndroidCookieJar
 import app.reverb.core.network.HttpClientFactory
+import app.reverb.data.DataRepository
 import app.reverb.extractor.ExtractorManager
 import app.reverb.logging.AndroidLogger
 import app.reverb.source.universal.UniversalSite
 import app.reverb.source.universal.WebViewCloudflareSolver
 import okhttp3.OkHttpClient
 
-/**
- * Application — holds the manual DI graph for Phase 1.
- */
 class ReverbApp : Application() {
 
     lateinit var cookieJar: AndroidCookieJar
+    lateinit var dataRepository: DataRepository
     lateinit var extractorManager: ExtractorManager
     lateinit var universalSite: UniversalSite
     lateinit var httpClient: OkHttpClient
@@ -31,22 +30,22 @@ class ReverbApp : Application() {
         Loggers.set(AndroidLogger())
         ReverbLog.i("App", "Reverb starting — Phase 1 MVP")
 
+        // ── Data ──
+        dataRepository = DataRepository(this)
+        ReverbLog.d("App", "Data repository initialized")
+
         // ── Ad-blocker ──
         val adMatcher = KotlinRegexMatcher(KotlinRegexMatcher.STARTER_RULES)
-        ReverbLog.d("App", "Ad matcher initialized — ${KotlinRegexMatcher.STARTER_RULES.size} starter rules")
 
-        // ── Cookie jar (bridges OkHttp ↔ WebView for Cloudflare solving) ──
+        // ── Cookie jar + CF solver ──
         cookieJar = AndroidCookieJar()
-
-        // ── Cloudflare solver (real WebView cookie-poll) ──
         val cfSolver = WebViewCloudflareSolver(this, cookieJar)
-        ReverbLog.d("App", "Cloudflare WebView solver wired")
 
         // ── HTTP client ──
         httpClient = HttpClientFactory(
             cookieJar = cookieJar,
             cloudflareSolver = cfSolver,
-            enableDoH = true,
+            enableDoH = dataRepository.getSettings().dohEnabled,
             enableLogging = true,
         ).build()
             .newBuilder()
@@ -57,7 +56,7 @@ class ReverbApp : Application() {
         // ── Extractor ──
         extractorManager = ExtractorManager(this, httpClient, adMatcher)
         universalSite = UniversalSite(extractorManager.extractor)
-        ReverbLog.i("App", "Reverb ready — extractor + universal site + CF solver wired")
+        ReverbLog.i("App", "Reverb ready — Phase 1 MVP wired")
     }
 
     companion object {

@@ -59,6 +59,7 @@ dependencies {
     implementation(project(":source-api"))
     implementation(project(":source-universal"))
     implementation(project(":adblock"))
+    implementation(project(":data"))
 
     // AndroidX core
     implementation(libs.androidx.core.ktx)

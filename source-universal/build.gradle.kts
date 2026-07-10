@@ -29,6 +29,7 @@ dependencies {
     implementation(project(":adblock"))
     implementation(libs.coroutines.android)
     implementation(libs.jsoup)
+    implementation(libs.okhttp)
     implementation(libs.webkit)
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)

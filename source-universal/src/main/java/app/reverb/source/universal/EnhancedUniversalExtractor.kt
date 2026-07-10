@@ -115,16 +115,18 @@ class EnhancedUniversalExtractor(
                 val body = fetchBody(detected.url, headers)
                 val master = HlsMasterParser.parse(detected.url, body)
                 val qualities = master.variants.map { v ->
+                    val height = v.height
+                    val bandwidth = v.bandwidth
                     val label = when {
-                        v.height != null -> "${v.height}p"
-                        v.bandwidth != null -> "${v.bandwidth / 1000}kbps"
+                        height != null -> "${height}p"
+                        bandwidth != null -> "${bandwidth / 1000}kbps"
                         else -> "HLS"
                     }
                     Quality(
                         label = label,
                         url = v.url,
                         format = StreamFormat.HLS,
-                        bandwidth = v.bandwidth,
+                        bandwidth = bandwidth,
                         resolution = v.resolution,
                         codecs = v.codecs,
                     )

@@ -5,6 +5,7 @@ import okhttp3.CookieJar
 import okhttp3.Dns
 import okhttp3.OkHttp
 import okhttp3.OkHttpClient
+import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.dnsoverhttps.DnsOverHttps
 import java.net.InetAddress
@@ -74,7 +75,7 @@ class HttpClientFactory(
             .build()
 
     private fun String.toHttpUrlOrEmpty() =
-        runCatching { okhttp3.HttpUrl.get(this) }.getOrElse { error("invalid DoH URL: $this") }
+        runCatching { this.toHttpUrl() }.getOrElse { error("invalid DoH URL: $this") }
 }
 
 /** A no-op Dns that just resolves via the platform resolver — used when DoH is disabled. */

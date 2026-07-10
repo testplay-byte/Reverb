@@ -96,13 +96,16 @@ fun interface CloudflareSolver {
     /**
      * Solve the CF challenge for [url]. Returns true if cookies were obtained and
      * the retry should proceed. Implementations update the shared CookieJar.
+     *
+     * NOTE: synchronous because OkHttp interceptors are blocking. The WebView-based
+     * solver (Phase 1) will use runBlocking internally to bridge the coroutine.
      */
-    suspend fun solve(url: String, chain: Interceptor.Chain): Boolean
+    fun solve(url: String, chain: Interceptor.Chain): Boolean
 }
 
 /** Phase-0 no-op solver — logs and returns false. Phase 1 will replace with the WebView solver. */
 object NoopCloudflareSolver : CloudflareSolver {
-    override suspend fun solve(url: String, chain: Interceptor.Chain): Boolean {
+    override fun solve(url: String, chain: Interceptor.Chain): Boolean {
         println("[CloudflareInterceptor] CF challenge detected for $url — no solver wired (Phase 0 stub)")
         return false
     }

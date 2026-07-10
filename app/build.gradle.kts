@@ -80,4 +80,12 @@ dependencies {
 
     // WebView
     implementation(libs.webkit)
+
+    // Networking (used directly by ReverbApp for DI graph)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
+    implementation(libs.okhttp.brotli)
+    implementation(libs.okhttp.dnsoverhttps)
+    implementation(libs.jsoup)
+    implementation(libs.coroutines.core)
 }

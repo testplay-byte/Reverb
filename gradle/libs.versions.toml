@@ -69,8 +69,8 @@ androidxTestRunner = "1.7.0"
 
 # Android SDK
 minSdk = "24"
-targetSdk = "36"
-compileSdk = "36"
+targetSdk = "37"
+compileSdk = "37"
 
 [libraries]
 # AndroidX core

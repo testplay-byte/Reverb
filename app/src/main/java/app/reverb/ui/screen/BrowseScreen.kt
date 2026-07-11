@@ -40,9 +40,10 @@ import app.reverb.ReverbApp
 import app.reverb.core.common.ReverbLog
 import app.reverb.data.HistoryEntry
 import app.reverb.source.api.MediaItem
-import app.reverb.ui.nativeui.EpisodePlayerViewModel
+import app.reverb.source.api.VideoRef
 import app.reverb.ui.nativeui.NativeCatalogScreen
 import app.reverb.ui.nativeui.NativeDetailsScreen
+import app.reverb.ui.player.PlayerScreen
 
 /**
  * Browse screen — Phase 2.
@@ -60,15 +61,23 @@ fun BrowseScreen(
 ) {
     var nativeCatalogUrl by remember { mutableStateOf<String?>(null) }
     var nativeDetailItem by remember { mutableStateOf<MediaItem?>(null) }
+    var playingEpisode by remember { mutableStateOf<VideoRef?>(null) }
+    var playingEpisodeList by remember { mutableStateOf<List<VideoRef>>(emptyList()) }
 
     val onNavigate: (String) -> Unit = { url ->
         nativeCatalogUrl = url
     }
 
-    // Episode player VM (created at the composable level, used in the callback).
-    val episodePlayerVm = remember { EpisodePlayerViewModel(app) }
-
     when {
+        // Player screen (when an episode is tapped).
+        playingEpisode != null -> {
+            PlayerScreen(
+                app = app,
+                episode = playingEpisode!!,
+                episodeList = playingEpisodeList,
+                onBack = { playingEpisode = null },
+            )
+        }
         // Details screen (when an item is tapped in the catalog).
         nativeDetailItem != null && nativeCatalogUrl != null -> {
             val config = app.dataRepository.getLearnedSite(
@@ -79,10 +88,10 @@ fun BrowseScreen(
                 item = nativeDetailItem!!,
                 config = config,
                 onBack = { nativeDetailItem = null },
-                onEpisodeClick = { episode ->
-                    // Extract the video from the episode URL and play it.
+                onEpisodeClick = { episode, episodeList ->
                     ReverbLog.i("Browse", "Episode tapped: ${episode.title} — ${episode.url}")
-                    episodePlayerVm.playEpisode(episode)
+                    playingEpisode = episode
+                    playingEpisodeList = episodeList
                 },
             )
         }

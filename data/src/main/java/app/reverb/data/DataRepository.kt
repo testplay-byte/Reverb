@@ -108,6 +108,11 @@ class DataRepository(context: Context) {
         ReverbLog.i("Repo", "Learned site saved: ${config.name} (${config.baseUrl})")
     }
 
+    fun clearLearnedSites() {
+        store.saveList("learned_sites", emptyList(), learnedSiteSerializer)
+        ReverbLog.i("Repo", "Cleared all learned sites")
+    }
+
     // ── Settings ─────────────────────────────────────────────────────────────
     fun getSettings(): AppSettings =
         store.load("settings", AppSettings.serializer(), AppSettings())

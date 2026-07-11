@@ -231,7 +231,7 @@ fun NativeDetailsScreen(
     item: MediaItem,
     config: LearnedSiteConfig?,
     onBack: () -> Unit,
-    onEpisodeClick: (VideoRef) -> Unit,
+    onEpisodeClick: (VideoRef, List<VideoRef>) -> Unit,
 ) {
     val viewModel = remember { NativeDetailsViewModel(app, item, config) }
     val state by viewModel.state.collectAsState()
@@ -301,7 +301,7 @@ fun NativeDetailsScreen(
                     }
                     items(details.episodes.size) { index ->
                         val episode = details.episodes[index]
-                        EpisodeRow(episode = episode, onClick = { onEpisodeClick(episode) })
+                        EpisodeRow(episode = episode, onClick = { onEpisodeClick(episode, details.episodes) })
                     }
                 } else if (details != null) {
                     item {

@@ -9,10 +9,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
@@ -204,6 +206,66 @@ fun SettingsScreen(
         Text("Downloads", style = MaterialTheme.typography.titleMedium)
         SettingsCard("Wi-Fi only", "Only download over Wi-Fi to save mobile data.", settings.wifiOnlyDownloads) { v ->
             settings = settings.copy(wifiOnlyDownloads = v); app.dataRepository.saveSettings(settings)
+        }
+
+        HorizontalDivider()
+
+        // ── Site analysis cache ──
+        Text("Site analysis cache", style = MaterialTheme.typography.titleMedium)
+        Text(
+            "When you visit a site, the LLM analyzes its HTML and caches the selectors. " +
+            "If a site's layout changes or the analysis was wrong, clear the cache and re-analyze.",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        val learnedSites = remember { mutableStateOf(app.dataRepository.getLearnedSites()) }
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),
+        ) {
+            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Text("Cached sites: ${learnedSites.value.size}", style = MaterialTheme.typography.bodyMedium)
+                if (learnedSites.value.isNotEmpty()) {
+                    learnedSites.value.forEach { site ->
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        ) {
+                            Text("• ${site.name}", style = MaterialTheme.typography.bodySmall, modifier = Modifier.weight(1f))
+                            OutlinedButton(onClick = {
+                                app.dataRepository.saveLearnedSite(site.copy(lastValidatedAt = 0))
+                                ReverbLog.i("Settings", "Invalidated cache for ${site.name}")
+                            }) { Text("Re-analyze") }
+                        }
+                    }
+                }
+                OutlinedButton(
+                    onClick = {
+                        app.dataRepository.clearLearnedSites()
+                        learnedSites.value = emptyList()
+                        ReverbLog.i("Settings", "Cleared all site analysis cache")
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                ) { Text("Clear all cached sites") }
+            }
+        }
+
+        // Clear history.
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),
+        ) {
+            Column(modifier = Modifier.padding(16.dp)) {
+                OutlinedButton(
+                    onClick = {
+                        app.dataRepository.clearHistory()
+                        ReverbLog.i("Settings", "Cleared history")
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                ) { Text("Clear browsing history") }
+            }
         }
 
         HorizontalDivider()

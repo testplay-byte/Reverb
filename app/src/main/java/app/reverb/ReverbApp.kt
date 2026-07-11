@@ -55,9 +55,10 @@ class ReverbApp : Application() {
             .build()
         ReverbLog.d("App", "HTTP client built — OkHttp + UA + RateLimit + Cloudflare(solver) + DoH + Brotli + AdBlock")
 
-        // ── Extractor ──
+        // ── Extractor (lazy — WebView created on first use, NOT during app startup) ──
         extractorManager = ExtractorManager(this, httpClient, adMatcher)
-        universalSite = UniversalSite(extractorManager.extractor)
+        universalSite = UniversalSite { extractorManager.extractor }
+        ReverbLog.d("App", "Extractor + universal site wired (lazy — WebView created on first resolve)")
 
         // ── Player ──
         player = ReverbPlayer(this, httpClient)

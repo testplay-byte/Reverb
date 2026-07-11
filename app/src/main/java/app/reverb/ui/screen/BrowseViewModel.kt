@@ -50,7 +50,12 @@ class BrowseViewModel(private val app: ReverbApp) : ViewModel() {
 
         viewModelScope.launch {
             try {
-                val stream = app.universalSite.resolveVideo(VideoRef(url = url, title = url))
+                // Run extraction on IO dispatcher — the WebView creation + JS execution
+                // should not block the main thread. The extractor internally posts WebView
+                // operations to the main thread via Handler.
+                val stream = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+                    app.universalSite.resolveVideo(VideoRef(url = url, title = url))
+                }
                 _state.update { it.copy(extracting = false, stream = stream) }
                 // Add to history.
                 app.dataRepository.addHistory(HistoryEntry(

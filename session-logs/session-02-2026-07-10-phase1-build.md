@@ -93,3 +93,22 @@ Build the complete Phase 1 MVP: logging infrastructure, real Cloudflare solver, 
 - (latest) Session log + memory update
 
 **CI run 29114596469: ✅ SUCCESS — APK 29.4 MB, all 14 steps green, all tests pass.**
+
+## Post-release fix — crash on startup (NPE in ExtractorManager)
+
+**Symptom:** App installed but crashed immediately with:
+```
+java.lang.NullPointerException
+  at app.reverb.extractor.ExtractorManager.createWebViewOnMainThread(ExtractorManager.kt:47)
+  at app.reverb.extractor.ExtractorManager.getExtractor(ExtractorManager.kt:28)
+  at app.reverb.ReverbApp.onCreate(ReverbApp.kt:60)
+```
+
+**Root cause:** Main-thread deadlock. `ReverbApp.onCreate()` runs on the main thread. It accessed `extractorManager.extractor` which called `createWebViewOnMainThread` → `Handler.post { } + latch.await()`. Since the main thread was blocked by `latch.await()`, the posted Runnable never executed → latch timed out (5s) → `result` was null → `result!!` threw NPE.
+
+**Fix (3 changes, commit c70e6da):**
+1. `ExtractorManager.createWebViewOnMainThread`: detect `Looper.myLooper() == Looper.getMainLooper()` and create the WebView directly if already on main thread. If on background, post + wait with 10s timeout + proper error.
+2. `UniversalSite`: changed constructor from `(extractor: EnhancedUniversalExtractor)` to `(extractorProvider: () -> EnhancedUniversalExtractor)` — lazy. ReverbApp passes `{ extractorManager.extractor }`. WebView is NOT created during `Application.onCreate()` — only on first `resolveVideo()`.
+3. `BrowseViewModel.extract()`: wrapped `resolveVideo()` in `withContext(Dispatchers.IO)` so extraction runs on a background thread.
+
+**CI run 29137140559: ✅ SUCCESS — APK 29.4 MB, all 14 steps green.**

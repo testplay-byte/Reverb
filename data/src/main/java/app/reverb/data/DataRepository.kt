@@ -142,8 +142,8 @@ class DataRepository(context: Context) {
     }
 
     private fun loadString(name: String, default: String): String =
-        store.load(name, kotlinx.serialization.builtins.serializer(), default)
+        store.load(name, kotlinx.serialization.builtins.serializer<String>(), default)
 
     private fun saveString(name: String, value: String) =
-        store.save(name, value, kotlinx.serialization.builtins.serializer())
+        store.save(name, value, kotlinx.serialization.builtins.serializer<String>())
 }

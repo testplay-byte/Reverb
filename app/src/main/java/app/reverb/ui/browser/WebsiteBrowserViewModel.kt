@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.reverb.ReverbApp
 import app.reverb.core.common.ReverbLog
+import app.reverb.data.HistoryEntry
 import app.reverb.source.api.Quality
 import app.reverb.source.api.ResolvedStream
 import app.reverb.source.api.StreamFormat
@@ -52,7 +53,7 @@ class WebsiteBrowserViewModel(
         ReverbLog.i("BrowserVM", "Page finished: $url — ${_state.value.detectedStreams.size} streams detected")
         // Record this visit in history.
         app.dataRepository.addHistory(
-            app.reverb.data.HistoryEntry(
+            HistoryEntry(
                 url = url,
                 title = _state.value.pageTitle ?: url,
                 visitedAt = System.currentTimeMillis(),

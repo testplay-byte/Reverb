@@ -40,6 +40,8 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import app.reverb.ReverbApp
+import app.reverb.data.DownloadStatus
+import app.reverb.data.DownloadTask
 import app.reverb.data.HistoryEntry
 import app.reverb.ui.browser.WebsiteBrowser
 
@@ -78,13 +80,13 @@ fun BrowseScreen(
             onDownloadStream = { stream, quality ->
                 // Phase 2: create a download task in the queue.
                 val url = browsingUrl ?: ""
-                val task = app.reverb.data.DownloadTask(
+                val task = DownloadTask(
                     id = java.util.UUID.randomUUID().toString(),
                     url = quality.url,
                     title = url,
                     quality = quality.label,
                     format = quality.format.name,
-                    status = app.reverb.data.DownloadStatus.QUEUED,
+                    status = DownloadStatus.QUEUED,
                     createdAt = System.currentTimeMillis(),
                     updatedAt = System.currentTimeMillis(),
                 )

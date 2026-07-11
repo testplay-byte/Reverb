@@ -65,6 +65,9 @@ fun BrowseScreen(
         nativeCatalogUrl = url
     }
 
+    // Episode player VM (created at the composable level, used in the callback).
+    val episodePlayerVm = remember { EpisodePlayerViewModel(app) }
+
     when {
         // Details screen (when an item is tapped in the catalog).
         nativeDetailItem != null && nativeCatalogUrl != null -> {
@@ -79,8 +82,7 @@ fun BrowseScreen(
                 onEpisodeClick = { episode ->
                     // Extract the video from the episode URL and play it.
                     ReverbLog.i("Browse", "Episode tapped: ${episode.title} — ${episode.url}")
-                    val playerVm = remember { EpisodePlayerViewModel(app) }
-                    playerVm.playEpisode(episode)
+                    episodePlayerVm.playEpisode(episode)
                 },
             )
         }

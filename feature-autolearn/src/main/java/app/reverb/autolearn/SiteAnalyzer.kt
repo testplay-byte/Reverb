@@ -149,7 +149,8 @@ class SiteAnalyzer(
             if (selector.isNullOrBlank()) continue
             val elements = doc.select(selector)
             if (elements.isNotEmpty()) {
-                val href = elements.first().absUrl("href").ifBlank { elements.first().attr("href") }
+                val firstEl = elements.first()
+                val href = firstEl.absUrl("href").ifBlank { firstEl.attr("href") }
                 if (href.isNotBlank()) {
                     return resolveUrl(baseUrl, href)
                 }

@@ -2,6 +2,7 @@ package app.reverb
 
 import android.app.Application
 import app.reverb.adblock.AdBlockInterceptor
+import app.reverb.adblock.AdMatcher
 import app.reverb.adblock.KotlinRegexMatcher
 import app.reverb.core.common.Loggers
 import app.reverb.core.common.ReverbLog
@@ -23,6 +24,7 @@ class ReverbApp : Application() {
     lateinit var universalSite: UniversalSite
     lateinit var player: ReverbPlayer
     lateinit var httpClient: OkHttpClient
+    lateinit var adMatcher: AdMatcher
 
     override fun onCreate() {
         super.onCreate()
@@ -37,7 +39,7 @@ class ReverbApp : Application() {
         ReverbLog.d("App", "Data repository initialized")
 
         // ── Ad-blocker ──
-        val adMatcher = KotlinRegexMatcher(KotlinRegexMatcher.STARTER_RULES)
+        adMatcher = KotlinRegexMatcher(KotlinRegexMatcher.STARTER_RULES)
 
         // ── Cookie jar + CF solver ──
         cookieJar = AndroidCookieJar()

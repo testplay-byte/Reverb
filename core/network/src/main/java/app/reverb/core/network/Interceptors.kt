@@ -13,9 +13,21 @@ import java.util.concurrent.atomic.AtomicInteger
 /**
  * Rate-limit interceptor — sliding-window per host.
  * Default: 1 request per 2 seconds per host. Matches Aniyomi's pattern.
+ *
+ * NOTE: DoH (DNS-over-HTTPS) hosts are EXCLUDED from rate limiting — they're
+ * infrastructure lookups, not site requests, and rate-limiting them causes
+ * page loads to take 7-15s (seen in the logcat: cloudflare-dns.com queries
+ * were being delayed by the rate limiter).
  */
 class RateLimitInterceptor(
     private val minIntervalMs: Long = 2000L,
+    /** Hosts that should never be rate-limited (infrastructure: DoH, CDNs for static assets, etc.) */
+    private val exemptHosts: Set<String> = setOf(
+        "cloudflare-dns.com",
+        "dns.google",
+        "dns.quad9.net",
+        "dns.adguard.com",
+    ),
 ) : Interceptor {
 
     private val lastRequestTimes = ConcurrentHashMap<String, Long>()
@@ -23,6 +35,12 @@ class RateLimitInterceptor(
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val host = chain.request().url.host
+
+        // Skip rate-limiting for infrastructure hosts.
+        if (host in exemptHosts) {
+            return chain.proceed(chain.request())
+        }
+
         val now = System.currentTimeMillis()
 
         val counter = inFlight.computeIfAbsent(host) { AtomicInteger(0) }

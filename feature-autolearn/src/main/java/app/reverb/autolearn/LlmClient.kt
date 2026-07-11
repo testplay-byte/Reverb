@@ -11,8 +11,13 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.buildJsonArray
 import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -107,14 +112,17 @@ class GeminiLlmClient(
                     throw RuntimeException("Gemini API error ${resp.code}: ${errorBody.take(200)}")
                 }
                 val responseStr = resp.body?.string().orEmpty()
-                val responseJson = json.parseToJsonElement(responseStr) as JsonObject
-                val candidates = responseJson["candidates"] as? kotlinx.serialization.json.JsonArray
-                val firstCandidate = candidates?.firstOrNull() as? JsonObject
-                val content = firstCandidate?.get("content") as? JsonObject
-                val parts = content?.get("parts") as? kotlinx.serialization.json.JsonArray
-                val firstPart = parts?.firstOrNull() as? JsonObject
-                val text = firstPart?.get("text")?.toString()?.trim('"') ?: ""
-                ReverbLog.d("LlmClient", "Gemini response: ${text.length} chars")
+                ReverbLog.d("LlmClient", "Gemini raw response: ${responseStr.take(200)}")
+                val responseJson = json.parseToJsonElement(responseStr).jsonObject
+                val candidates = responseJson["candidates"]?.jsonArray
+                val firstCandidate = candidates?.firstOrNull()?.jsonObject
+                val content = firstCandidate?.get("content")?.jsonObject
+                val parts = content?.get("parts")?.jsonArray
+                val firstPart = parts?.firstOrNull()?.jsonObject
+                // Use .jsonPrimitive.content to properly unescape the JSON string
+                // (previously .toString()?.trim('"') left literal \" and \n in the text)
+                val text = firstPart?.get("text")?.jsonPrimitive?.content ?: ""
+                ReverbLog.d("LlmClient", "Gemini response: ${text.length} chars — ${text.take(100)}")
                 text
             }
         } catch (e: Exception) {
@@ -199,12 +207,14 @@ class OpenAiCompatibleLlmClient(
                     throw RuntimeException("API error ${resp.code}: ${errorBody.take(200)}")
                 }
                 val responseStr = resp.body?.string().orEmpty()
-                val responseJson = json.parseToJsonElement(responseStr) as JsonObject
-                val choices = responseJson["choices"] as? kotlinx.serialization.json.JsonArray
-                val firstChoice = choices?.firstOrNull() as? JsonObject
-                val message = firstChoice?.get("message") as? JsonObject
-                val content = message?.get("content")?.toString()?.trim('"') ?: ""
-                ReverbLog.d("LlmClient", "OpenAI-compatible response: ${content.length} chars")
+                ReverbLog.d("LlmClient", "OpenAI-compatible raw response: ${responseStr.take(200)}")
+                val responseJson = json.parseToJsonElement(responseStr).jsonObject
+                val choices = responseJson["choices"]?.jsonArray
+                val firstChoice = choices?.firstOrNull()?.jsonObject
+                val message = firstChoice?.get("message")?.jsonObject
+                // Use .jsonPrimitive.content to properly unescape the JSON string
+                val content = message?.get("content")?.jsonPrimitive?.content ?: ""
+                ReverbLog.d("LlmClient", "OpenAI-compatible response: ${content.length} chars — ${content.take(100)}")
                 content
             }
         } catch (e: Exception) {

@@ -6,14 +6,14 @@ import app.reverb.adblock.AdMatcher
 import app.reverb.adblock.KotlinRegexMatcher
 import app.reverb.autolearn.LlmClient
 import app.reverb.autolearn.LlmClientFactory
-import app.reverb.autolearn.LlmConfig
-import app.reverb.autolearn.LlmProvider
 import app.reverb.autolearn.NoopLlmClient
 import app.reverb.core.common.Loggers
 import app.reverb.core.common.ReverbLog
 import app.reverb.core.network.AndroidCookieJar
 import app.reverb.core.network.HttpClientFactory
 import app.reverb.data.DataRepository
+import app.reverb.data.LlmConfig
+import app.reverb.data.LlmProvider
 import app.reverb.extractor.ExtractorManager
 import app.reverb.logging.AndroidLogger
 import app.reverb.player.ReverbPlayer

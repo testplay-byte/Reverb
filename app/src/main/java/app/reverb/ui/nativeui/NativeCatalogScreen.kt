@@ -266,7 +266,8 @@ fun NativeDetailsScreen(
                             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                         )
                     }
-                    items(details.episodes) { episode ->
+                    items(details.episodes.size) { index ->
+                        val episode = details.episodes[index]
                         EpisodeRow(episode = episode, onClick = { onEpisodeClick(episode) })
                     }
                 }

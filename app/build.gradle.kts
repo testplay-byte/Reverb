@@ -61,6 +61,7 @@ dependencies {
     implementation(project(":adblock"))
     implementation(project(":data"))
     implementation(project(":player"))
+    implementation(project(":feature-autolearn"))
 
     // AndroidX core
     implementation(libs.androidx.core.ktx)
@@ -95,4 +96,8 @@ dependencies {
     implementation(libs.media3.ui)
     implementation(libs.media3.common)
     implementation(libs.media3.exoplayer)
+
+    // Coil (image loading for catalog grid)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 }

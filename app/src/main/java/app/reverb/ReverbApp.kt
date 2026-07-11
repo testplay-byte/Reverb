@@ -4,6 +4,11 @@ import android.app.Application
 import app.reverb.adblock.AdBlockInterceptor
 import app.reverb.adblock.AdMatcher
 import app.reverb.adblock.KotlinRegexMatcher
+import app.reverb.autolearn.LlmClient
+import app.reverb.autolearn.LlmClientFactory
+import app.reverb.autolearn.LlmConfig
+import app.reverb.autolearn.LlmProvider
+import app.reverb.autolearn.NoopLlmClient
 import app.reverb.core.common.Loggers
 import app.reverb.core.common.ReverbLog
 import app.reverb.core.network.AndroidCookieJar
@@ -25,6 +30,8 @@ class ReverbApp : Application() {
     lateinit var player: ReverbPlayer
     lateinit var httpClient: OkHttpClient
     lateinit var adMatcher: AdMatcher
+    var llmClient: LlmClient = NoopLlmClient
+        private set
 
     override fun onCreate() {
         super.onCreate()
@@ -32,11 +39,10 @@ class ReverbApp : Application() {
 
         // ── Logging ──
         Loggers.set(AndroidLogger())
-        ReverbLog.i("App", "Reverb starting — Phase 1 MVP")
+        ReverbLog.i("App", "Reverb starting — Phase 2")
 
         // ── Data ──
         dataRepository = DataRepository(this)
-        ReverbLog.d("App", "Data repository initialized")
 
         // ── Ad-blocker ──
         adMatcher = KotlinRegexMatcher(KotlinRegexMatcher.STARTER_RULES)
@@ -55,16 +61,26 @@ class ReverbApp : Application() {
             .newBuilder()
             .addInterceptor(AdBlockInterceptor(adMatcher))
             .build()
-        ReverbLog.d("App", "HTTP client built — OkHttp + UA + RateLimit + Cloudflare(solver) + DoH + Brotli + AdBlock")
+        ReverbLog.d("App", "HTTP client built")
 
-        // ── Extractor (lazy — WebView created on first use, NOT during app startup) ──
+        // ── Extractor (lazy) ──
         extractorManager = ExtractorManager(this, httpClient, adMatcher)
         universalSite = UniversalSite { extractorManager.extractor }
-        ReverbLog.d("App", "Extractor + universal site wired (lazy — WebView created on first resolve)")
 
         // ── Player ──
         player = ReverbPlayer(this, httpClient)
-        ReverbLog.i("App", "Reverb ready — Phase 1 MVP wired")
+
+        // ── LLM client ──
+        refreshLlmClient()
+
+        ReverbLog.i("App", "Reverb ready — Phase 2 (native UI + LLM analyzer)")
+    }
+
+    /** Re-create the LLM client from current settings. Call after settings change. */
+    fun refreshLlmClient() {
+        val config = dataRepository.getLlmConfig()
+        llmClient = LlmClientFactory.create(httpClient, config)
+        ReverbLog.i("App", "LLM client: ${llmClient.name} (configured=${llmClient.isConfigured})")
     }
 
     companion object {

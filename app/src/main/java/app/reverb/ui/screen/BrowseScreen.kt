@@ -9,14 +9,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Explore
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material3.Card
@@ -29,7 +27,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -40,20 +37,18 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import app.reverb.ReverbApp
-import app.reverb.data.DownloadStatus
-import app.reverb.data.DownloadTask
 import app.reverb.data.HistoryEntry
-import app.reverb.ui.browser.WebsiteBrowser
+import app.reverb.source.api.MediaItem
+import app.reverb.ui.nativeui.NativeCatalogScreen
+import app.reverb.ui.nativeui.NativeDetailsScreen
 
 /**
- * Browse screen — the main screen of Phase 2.
+ * Browse screen — Phase 2.
  *
  * Two modes:
- *   1. Home (default): address bar + bookmarks + recent history. User enters a URL → opens the WebsiteBrowser.
- *   2. Browser (when browsingUrl != null): the in-app WebView browser with ad-blocking + video detection.
- *
- * This is the core UX the user requested: "extract a web page and recreate it so
- * the user can click buttons and navigate, but the UI will be simplified and made good."
+ *   1. Home (default): address bar + quick sites + recent history.
+ *   2. Native catalog: when the user enters a URL, the LLM analyzes the site and
+ *      renders a NATIVE Compose UI grid (not a WebView).
  */
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
@@ -61,42 +56,44 @@ fun BrowseScreen(
     app: ReverbApp,
     modifier: Modifier = Modifier,
 ) {
-    var browsingUrl by remember { mutableStateOf<String?>(null) }
+    var nativeCatalogUrl by remember { mutableStateOf<String?>(null) }
+    var nativeDetailItem by remember { mutableStateOf<MediaItem?>(null) }
 
-    // When the user enters a URL, switch to browser mode.
     val onNavigate: (String) -> Unit = { url ->
-        browsingUrl = url
+        nativeCatalogUrl = url
     }
 
-    if (browsingUrl != null) {
-        // Browser mode — show the actual website with ad-blocking + video detection.
-        WebsiteBrowser(
-            app = app,
-            initialUrl = browsingUrl!!,
-            onBack = { browsingUrl = null },
-            onPlayStream = { stream, quality ->
-                app.player.play(stream, quality, title = quality.label)
-            },
-            onDownloadStream = { stream, quality ->
-                // Phase 2: create a download task in the queue.
-                val url = browsingUrl ?: ""
-                val task = DownloadTask(
-                    id = java.util.UUID.randomUUID().toString(),
-                    url = quality.url,
-                    title = url,
-                    quality = quality.label,
-                    format = quality.format.name,
-                    status = DownloadStatus.QUEUED,
-                    createdAt = System.currentTimeMillis(),
-                    updatedAt = System.currentTimeMillis(),
-                )
-                app.dataRepository.updateDownloadTask(task)
-            },
-            modifier = modifier,
-        )
-    } else {
-        // Home mode — address bar + bookmarks + recent.
-        HomeContent(app, modifier, onNavigate)
+    when {
+        // Details screen (when an item is tapped in the catalog).
+        nativeDetailItem != null && nativeCatalogUrl != null -> {
+            val config = app.dataRepository.getLearnedSite(
+                java.net.URI(nativeCatalogUrl!!).host ?: ""
+            )
+            NativeDetailsScreen(
+                app = app,
+                item = nativeDetailItem!!,
+                config = config,
+                onBack = { nativeDetailItem = null },
+                onEpisodeClick = { episode ->
+                    // Open the browser for the episode page (video detection + playback).
+                    nativeDetailItem = null
+                    nativeCatalogUrl = episode.url
+                },
+            )
+        }
+        // Native catalog screen (when a URL is entered).
+        nativeCatalogUrl != null -> {
+            NativeCatalogScreen(
+                app = app,
+                siteUrl = nativeCatalogUrl!!,
+                onBack = { nativeCatalogUrl = null },
+                onItemClick = { item -> nativeDetailItem = item },
+            )
+        }
+        // Home screen.
+        else -> {
+            HomeContent(app, modifier, onNavigate)
+        }
     }
 }
 
@@ -109,6 +106,7 @@ private fun HomeContent(
 ) {
     var urlInput by remember { mutableStateOf("") }
     val history = remember { app.dataRepository.getHistory() }
+    val llmConfigured = app.llmClient.isConfigured
 
     LazyColumn(
         modifier = modifier.padding(16.dp),
@@ -119,10 +117,34 @@ private fun HomeContent(
             Column(modifier = Modifier.fillMaxWidth()) {
                 Text("Reverb", style = MaterialTheme.typography.displaySmall)
                 Text(
-                    "Enter a website to browse — Reverb will block ads and detect videos.",
+                    "Enter a website to rebuild it as a native app UI.",
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
+            }
+        }
+
+        // LLM status warning.
+        if (!llmConfigured) {
+            item {
+                Surface(
+                    color = MaterialTheme.colorScheme.errorContainer,
+                    shape = RoundedCornerShape(16.dp),
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Column(modifier = Modifier.padding(16.dp)) {
+                        Text(
+                            "⚠ No LLM configured",
+                            style = MaterialTheme.typography.titleSmall,
+                            color = MaterialTheme.colorScheme.onErrorContainer,
+                        )
+                        Text(
+                            "Go to Settings → LLM to add your Google Gemini API key (free) or GLM endpoint. The LLM analyzes each site's HTML and generates the selectors for the native UI.",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onErrorContainer,
+                        )
+                    }
+                }
             }
         }
 

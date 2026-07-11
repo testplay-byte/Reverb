@@ -34,6 +34,9 @@ webkit = "1.16.0"
 # Media3 (ExoPlayer)
 media3 = "1.4.1"
 
+# Coil (image loading)
+coil = "3.5.0"
+
 # Testing
 junit = "4.13.2"
 robolectric = "4.16.1"
@@ -92,6 +95,10 @@ media3-hls = { group = "androidx.media3", name = "media3-hls", version.ref = "me
 media3-dash = { group = "androidx.media3", name = "media3-dash", version.ref = "media3" }
 media3-datasource-okhttp = { group = "androidx.media3", name = "media3-datasource-okhttp", version.ref = "media3" }
 media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3" }
+
+# Coil (image loading)
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 
 # Testing
 junit = { group = "junit", name = "junit", version.ref = "junit" }

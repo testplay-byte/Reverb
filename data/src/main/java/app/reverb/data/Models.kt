@@ -87,8 +87,25 @@ data class AppSettings(
     val translationEnabled: Boolean = false,
     val autoTranslate: Boolean = false,
     val targetLanguage: String = "en",
-    val defaultQuality: String = "auto",  // "auto" / "1080p" / "720p" / "480p"
+    val defaultQuality: String = "auto",
     val maxConcurrentDownloads: Int = 3,
     val wifiOnlyDownloads: Boolean = false,
     val cfSolverEnabled: Boolean = true,
 )
+
+// ── LLM configuration ───────────────────────────────────────────────────────
+
+@Serializable
+data class LlmConfig(
+    val provider: LlmProvider = LlmProvider.NONE,
+    val apiKey: String = "",
+    val endpoint: String = "https://api.z.ai/api/paas/v4/chat/completions",
+    val model: String = "",
+)
+
+@Serializable
+enum class LlmProvider {
+    NONE,
+    GEMINI,
+    OPENAI_COMPATIBLE,
+}

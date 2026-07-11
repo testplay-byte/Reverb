@@ -116,4 +116,34 @@ class DataRepository(context: Context) {
         store.save("settings", settings, AppSettings.serializer())
         ReverbLog.i("Repo", "Settings saved — adBlock=${settings.adBlockEnabled} doh=${settings.dohEnabled} translation=${settings.translationEnabled}")
     }
+
+    // ── LLM config ───────────────────────────────────────────────────────────
+    fun getLlmConfig(): LlmConfig {
+        val providerStr = loadString("llm_provider", "NONE")
+        val apiKey = loadString("llm_api_key", "")
+        val endpoint = loadString("llm_endpoint", "https://api.z.ai/api/paas/v4/chat/completions")
+        val model = loadString("llm_model", "")
+        val provider = runCatching { LlmProvider.valueOf(providerStr) }
+            .getOrDefault(LlmProvider.NONE)
+        return LlmConfig(
+            provider = provider,
+            apiKey = apiKey,
+            endpoint = endpoint,
+            model = model,
+        )
+    }
+
+    fun saveLlmConfig(config: LlmConfig) {
+        saveString("llm_provider", config.provider.name)
+        saveString("llm_api_key", config.apiKey)
+        saveString("llm_endpoint", config.endpoint)
+        saveString("llm_model", config.model)
+        ReverbLog.i("Repo", "LLM config saved — provider=${config.provider} model=${config.model}")
+    }
+
+    private fun loadString(name: String, default: String): String =
+        store.load(name, kotlinx.serialization.builtins.serializer(), default)
+
+    private fun saveString(name: String, value: String) =
+        store.save(name, value, kotlinx.serialization.builtins.serializer())
 }

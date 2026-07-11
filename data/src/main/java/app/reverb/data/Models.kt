@@ -62,7 +62,7 @@ enum class DownloadStatus {
 
 @Serializable
 data class LearnedSiteConfig(
-    val id: String,              // generated from baseUrl host
+    val id: String,
     val baseUrl: String,
     val name: String,
     val catalogSelector: String? = null,
@@ -74,6 +74,7 @@ data class LearnedSiteConfig(
     val detailsSynopsisSelector: String? = null,
     val episodeListSelector: String? = null,
     val episodeUrlPattern: String? = null,
+    val searchUrlPattern: String? = null,
     val videoExtractorHint: String = "universal",
     val lastValidatedAt: Long = 0,
 )

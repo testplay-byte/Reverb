@@ -4,7 +4,6 @@ import app.reverb.core.common.ReverbLog
 import app.reverb.core.html.HtmlSimplifier
 import app.reverb.data.DataRepository
 import app.reverb.data.LearnedSiteConfig
-import app.reverb.source.api.MediaItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
@@ -12,20 +11,23 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.jsoup.nodes.Element
 
 /**
  * The LLM-Assisted Site Analyzer — the differentiator.
  *
- * Pipeline (PLAN.md §23.3):
- *   1. Fetch the page HTML via OkHttp (+ CF cookies).
- *   2. Simplify (97KB → 2.6KB) via HtmlSimplifier.
- *   3. Send to LLM with a structured prompt.
- *   4. LLM returns JSON with CSS selectors (catalogSelector, cardFields, detailsUrlPattern, etc.).
- *   5. Validate: run each selector against the page via Jsoup — must return >0 matches.
- *   6. Retry up to 3× with error feedback if validation fails.
- *   7. Store the LearnedSiteConfig in DataRepository.
+ * MULTI-PAGE ANALYSIS (v2):
+ *   1. Fetch the homepage HTML → find the catalog cards.
+ *   2. Follow one card's link → fetch the DETAILS page.
+ *   3. Follow one episode link (if found) → fetch the EPISODE page.
+ *   4. Send all 3 simplified pages to the LLM in ONE prompt.
+ *   5. LLM returns JSON with selectors for all 3 page types.
+ *   6. Validate each selector against the corresponding page.
+ *   7. Retry up to 3× with error feedback.
+ *   8. Store the LearnedSiteConfig.
  *
- * The [LearnedSiteInterpreter] then uses the config to scrape + render native UI.
+ * This is critical because a single homepage doesn't contain enough info for the
+ * LLM to distinguish between detail-page links and episode-page links.
  */
 class SiteAnalyzer(
     private val httpClient: OkHttpClient,
@@ -34,39 +36,62 @@ class SiteAnalyzer(
 ) {
     private val json = Json { ignoreUnknownKeys = true }
 
-    /**
-     * Analyze a site and produce a [LearnedSiteConfig].
-     * Returns null if analysis fails after all retries.
-     */
     suspend fun analyzeSite(url: String, maxRetries: Int = 3): LearnedSiteConfig? = withContext(Dispatchers.IO) {
         ReverbLog.i("SiteAnalyzer", "Analyzing: $url")
-        val host = java.net.URI(url).host ?: run {
+        val host = runCatching { java.net.URI(url).host }.getOrNull() ?: run {
             ReverbLog.e("SiteAnalyzer", "Could not parse host from $url")
             return@withContext null
         }
 
-        // Check if we already have a cached config.
+        // Check cache first.
         dataRepository.getLearnedSite(host)?.let { cached ->
-            ReverbLog.i("SiteAnalyzer", "Using cached config for $host (last validated: ${cached.lastValidatedAt})")
+            ReverbLog.i("SiteAnalyzer", "Using cached config for $host")
             return@withContext cached
         }
 
-        // Fetch the HTML.
-        val html = fetchHtml(url) ?: run {
-            ReverbLog.e("SiteAnalyzer", "Failed to fetch HTML from $url")
+        // ── Step 1: Fetch the homepage ──
+        val homeHtml = fetchHtml(url) ?: run {
+            ReverbLog.e("SiteAnalyzer", "Failed to fetch homepage from $url")
             return@withContext null
         }
+        val homeSimplified = HtmlSimplifier.simplify(homeHtml)
+        ReverbLog.i("SiteAnalyzer", "Homepage simplified: ${homeSimplified.originalSizeBytes}B → ${homeSimplified.simplifiedSizeBytes}B, candidate=${homeSimplified.candidateSelector}")
 
-        // Simplify.
-        val simplified = HtmlSimplifier.simplify(html)
-        ReverbLog.i("SiteAnalyzer", "Simplified: ${simplified.originalSizeBytes}B → ${simplified.simplifiedSizeBytes}B, candidate=${simplified.candidateSelector}")
+        // ── Step 2: Find a detail-page link from the homepage ──
+        val candidateDetailUrl = findFirstCardLink(homeHtml, url, homeSimplified.candidateSelector)
+        ReverbLog.i("SiteAnalyzer", "Candidate detail URL: $candidateDetailUrl")
 
-        // Try up to maxRetries times.
+        // ── Step 3: Fetch the detail page (if found) ──
+        var detailSimplified: HtmlSimplifier.SimplifiedHtml? = null
+        var detailHtml: String? = null
+        if (candidateDetailUrl != null) {
+            detailHtml = fetchHtml(candidateDetailUrl)
+            if (detailHtml != null) {
+                detailSimplified = HtmlSimplifier.simplify(detailHtml, detectCandidates = true)
+                ReverbLog.i("SiteAnalyzer", "Detail page simplified: ${detailSimplified.simplifiedSizeBytes}B, candidate=${detailSimplified.candidateSelector}")
+            }
+        }
+
+        // ── Step 4: Find an episode link from the detail page ──
+        var episodeSimplified: HtmlSimplifier.SimplifiedHtml? = null
+        if (detailHtml != null && detailSimplified != null) {
+            val episodeUrl = findFirstEpisodeLink(detailHtml, candidateDetailUrl!!, detailSimplified.candidateSelector)
+            if (episodeUrl != null) {
+                ReverbLog.i("SiteAnalyzer", "Candidate episode URL: $episodeUrl")
+                val episodeHtml = fetchHtml(episodeUrl)
+                if (episodeHtml != null) {
+                    episodeSimplified = HtmlSimplifier.simplify(episodeHtml, detectCandidates = false)
+                    ReverbLog.i("SiteAnalyzer", "Episode page simplified: ${episodeSimplified.simplifiedSizeBytes}B")
+                }
+            }
+        }
+
+        // ── Step 5: Send all pages to the LLM ──
         var lastError: String? = null
         for (attempt in 1..maxRetries) {
             ReverbLog.d("SiteAnalyzer", "LLM attempt $attempt/$maxRetries")
 
-            val userPrompt = buildUserPrompt(simplified, lastError)
+            val userPrompt = buildMultiPagePrompt(url, homeSimplified, detailSimplified, episodeSimplified, lastError)
             val llmResponse = try {
                 llmClient.complete(SYSTEM_PROMPT, userPrompt)
             } catch (e: Exception) {
@@ -75,14 +100,13 @@ class SiteAnalyzer(
                 continue
             }
 
-            // Parse the LLM response as JSON.
             val config = parseLlmResponse(llmResponse, host, url) ?: run {
                 lastError = "Invalid JSON from LLM"
                 continue
             }
 
-            // Validate the selectors against the page.
-            val errors = validateSelectors(config, html)
+            // Validate selectors against the pages we fetched.
+            val errors = validateSelectorsMultiPage(config, homeHtml, detailHtml)
             if (errors.isEmpty()) {
                 ReverbLog.i("SiteAnalyzer", "Analysis SUCCESS on attempt $attempt — config saved for $host")
                 val finalConfig = config.copy(lastValidatedAt = System.currentTimeMillis())
@@ -98,59 +122,118 @@ class SiteAnalyzer(
         null
     }
 
-    private fun fetchHtml(url: String): String? = try {
-        val request = Request.Builder()
-            .url(url)
-            .header("User-Agent", app.reverb.core.network.UserAgentInterceptor.DEFAULT_UA)
-            .build()
-        httpClient.newCall(request).execute().use { resp ->
-            resp.body?.string()
+    /** Find the first link inside a catalog card — this is likely the detail page URL. */
+    private fun findFirstCardLink(html: String, baseUrl: String, cardSelector: String?): String? {
+        val doc = Jsoup.parse(html, baseUrl)
+        val selector = cardSelector ?: run {
+            // Try common card selectors.
+            val candidates = listOf("div.poster", "div.ani.poster", "div.movie-card", "article", "div.card", "div.item")
+            candidates.firstOrNull { doc.select(it).isNotEmpty() } ?: return null
         }
-    } catch (e: Exception) {
-        ReverbLog.e("SiteAnalyzer", "Fetch HTML failed: ${e.message}", e)
-        null
+        val firstCard = doc.selectFirst(selector) ?: return null
+        val link = firstCard.selectFirst("a") ?: firstCard.tagName("a")
+        val href = link.absUrl("href").ifBlank { link.attr("href") }
+        return resolveUrl(baseUrl, href).takeIf { it.isNotBlank() }
     }
 
-    private fun buildUserPrompt(simplified: HtmlSimplifier.SimplifiedHtml, lastError: String?): String {
+    /** Find the first episode link on a detail page. */
+    private fun findFirstEpisodeLink(html: String, baseUrl: String, episodeSelector: String?): String? {
+        val doc = Jsoup.parse(html, baseUrl)
+        // Try the candidate selector first, then common episode selectors.
+        val selectors = listOfNotNull(
+            episodeSelector,
+            "a[href*=episode]", "a[href*=ep-]", "a[href*=watch]", "a[href*=play]",
+            "li a", "div.ep a", "div.epl a", "ul.episodes a",
+        )
+        for (selector in selectors) {
+            if (selector.isNullOrBlank()) continue
+            val elements = doc.select(selector)
+            if (elements.isNotEmpty()) {
+                val href = elements.first().absUrl("href").ifBlank { elements.first().attr("href") }
+                if (href.isNotBlank()) {
+                    return resolveUrl(baseUrl, href)
+                }
+            }
+        }
+        return null
+    }
+
+    private fun buildMultiPagePrompt(
+        baseUrl: String,
+        home: HtmlSimplifier.SimplifiedHtml,
+        detail: HtmlSimplifier.SimplifiedHtml?,
+        episode: HtmlSimplifier.SimplifiedHtml?,
+        lastError: String?,
+    ): String {
         val sb = StringBuilder()
-        sb.appendLine("Analyze this simplified HTML from a video-streaming website and identify the CSS selectors for scraping.")
+        sb.appendLine("Analyze this video-streaming website and identify CSS selectors for scraping it into a native Android app.")
         sb.appendLine()
-        sb.appendLine("Page title: ${simplified.title}")
-        sb.appendLine("Candidate selector detected: ${simplified.candidateSelector} (count: ${simplified.candidateCount})")
+        sb.appendLine("Base URL: $baseUrl")
         sb.appendLine()
+        sb.appendLine("=== PAGE 1: HOMEPAGE (catalog grid) ===")
+        sb.appendLine("Title: ${home.title}")
+        sb.appendLine("Candidate card selector: ${home.candidateSelector} (count: ${home.candidateCount})")
         sb.appendLine("Simplified HTML:")
-        sb.appendLine(simplified.compactHtml.take(3000))
+        sb.appendLine(home.compactHtml.take(2500))
         sb.appendLine()
+
+        if (detail != null) {
+            sb.appendLine("=== PAGE 2: DETAILS PAGE (anime/show info + episode list) ===")
+            sb.appendLine("Title: ${detail.title}")
+            sb.appendLine("Candidate episode selector: ${detail.candidateSelector} (count: ${detail.candidateCount})")
+            sb.appendLine("Simplified HTML:")
+            sb.appendLine(detail.compactHtml.take(2500))
+            sb.appendLine()
+        }
+
+        if (episode != null) {
+            sb.appendLine("=== PAGE 3: EPISODE/WATCH PAGE (video player) ===")
+            sb.appendLine("Title: ${episode.title}")
+            sb.appendLine("Simplified HTML:")
+            sb.appendLine(episode.compactHtml.take(1500))
+            sb.appendLine()
+        }
+
         if (lastError != null) {
             sb.appendLine("Previous attempt failed with these errors:")
             sb.appendLine(lastError)
             sb.appendLine("Please fix the selectors and try again.")
             sb.appendLine()
         }
+
         sb.appendLine("Output STRICT JSON with these fields:")
-        sb.appendLine("""{"catalogSelector":"CSS selector for each card in the grid","cardTitleSelector":"relative to card","cardThumbnailSelector":"relative to card img src","cardUrlSelector":"relative to card link href","detailsUrlPattern":"regex for details URLs","detailsPosterSelector":"poster img on details page","detailsSynopsisSelector":"synopsis text","episodeListSelector":"each episode link","episodeUrlPattern":"regex for episode URLs","videoExtractorHint":"universal"}""")
-        sb.appendLine("Only output the JSON, nothing else.")
+        sb.appendLine("""{"catalogSelector":"CSS selector for each card on the HOMEPAGE grid","cardTitleSelector":"relative to card, for the title text","cardThumbnailSelector":"relative to card, for the thumbnail img (use img src)","cardUrlSelector":"relative to card, for the link to the DETAILS PAGE (not episode page!)","detailsUrlPattern":"regex matching details-page URLs","detailsPosterSelector":"poster img on details page","detailsSynopsisSelector":"synopsis/description text on details page","episodeListSelector":"each episode link on the DETAILS PAGE","episodeUrlPattern":"regex matching episode/watch URLs","searchUrlPattern":"URL pattern for search (use {query} as placeholder, e.g. https://site.com/search?q={query})","videoExtractorHint":"universal"}""")
+        sb.appendLine()
+        sb.appendLine("IMPORTANT:")
+        sb.appendLine("- cardUrlSelector must link to the DETAILS page (with episode list), NOT directly to a watch/episode page")
+        sb.appendLine("- Details pages typically have a URL like /anime/{slug} or /title/{id}")
+        sb.appendLine("- Episode/watch pages typically have a URL like /watch/{slug}/{ep} or /play/{id}")
+        sb.appendLine("- If the site has search, set searchUrlPattern with {query} as the placeholder")
+        sb.appendLine("- Only output the JSON, nothing else")
         return sb.toString()
     }
 
     private fun parseLlmResponse(response: String, host: String, baseUrl: String): LearnedSiteConfig? {
-        // Extract JSON from the response (it might have markdown fences or extra text).
-        val jsonStr = extractJson(response) ?: return null
+        val jsonStr = extractJson(response) ?: run {
+            ReverbLog.e("SiteAnalyzer", "Could not extract JSON from LLM response: ${response.take(200)}")
+            return null
+        }
         return try {
             val obj = json.parseToJsonElement(jsonStr) as kotlinx.serialization.json.JsonObject
             LearnedSiteConfig(
                 id = host,
                 baseUrl = baseUrl,
                 name = host,
-                catalogSelector = obj["catalogSelector"]?.toString()?.trim('"'),
-                cardTitleSelector = obj["cardTitleSelector"]?.toString()?.trim('"'),
-                cardThumbnailSelector = obj["cardThumbnailSelector"]?.toString()?.trim('"'),
-                cardUrlSelector = obj["cardUrlSelector"]?.toString()?.trim('"'),
-                detailsUrlPattern = obj["detailsUrlPattern"]?.toString()?.trim('"'),
-                detailsPosterSelector = obj["detailsPosterSelector"]?.toString()?.trim('"'),
-                detailsSynopsisSelector = obj["detailsSynopsisSelector"]?.toString()?.trim('"'),
-                episodeListSelector = obj["episodeListSelector"]?.toString()?.trim('"'),
-                episodeUrlPattern = obj["episodeUrlPattern"]?.toString()?.trim('"'),
+                catalogSelector = obj["catalogSelector"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                cardTitleSelector = obj["cardTitleSelector"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                cardThumbnailSelector = obj["cardThumbnailSelector"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                cardUrlSelector = obj["cardUrlSelector"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                detailsUrlPattern = obj["detailsUrlPattern"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                detailsPosterSelector = obj["detailsPosterSelector"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                detailsSynopsisSelector = obj["detailsSynopsisSelector"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                episodeListSelector = obj["episodeListSelector"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                episodeUrlPattern = obj["episodeUrlPattern"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
+                searchUrlPattern = obj["searchUrlPattern"]?.toString()?.trim('"')?.takeIf { it.isNotBlank() && it != "null" },
                 videoExtractorHint = obj["videoExtractorHint"]?.toString()?.trim('"') ?: "universal",
             )
         } catch (e: Exception) {
@@ -160,9 +243,6 @@ class SiteAnalyzer(
     }
 
     private fun extractJson(text: String): String? {
-        // Try to find a JSON object in the response.
-        val jsonRegex = Regex("""\{[^{}]*("(?:[^"\\]|\\.)*"[^{}]*)*\}""", RegexOption.DOT_MATCHES_ALL)
-        // First try: look for the full JSON object with nested braces.
         var depth = 0
         var start = -1
         for (i in text.indices) {
@@ -174,25 +254,32 @@ class SiteAnalyzer(
         return null
     }
 
-    /** Validate each selector against the HTML. Returns a list of error messages (empty = all valid). */
-    private fun validateSelectors(config: LearnedSiteConfig, html: String): List<String> {
+    private fun validateSelectorsMultiPage(config: LearnedSiteConfig, homeHtml: String, detailHtml: String?): List<String> {
         val errors = mutableListOf<String>()
-        val doc = Jsoup.parse(html)
+        val homeDoc = Jsoup.parse(homeHtml)
 
         config.catalogSelector?.let { selector ->
-            if (selector.isNotBlank() && selector != "null") {
-                val elements = doc.select(selector)
+            if (selector.isNotBlank()) {
+                val elements = homeDoc.select(selector)
                 if (elements.isEmpty()) {
-                    errors.add("catalogSelector '$selector' returned 0 matches (page has: ${summarizeRepeatedElements(doc)})")
+                    errors.add("catalogSelector '$selector' returned 0 matches on homepage (available: ${summarizeRepeatedElements(homeDoc)})")
+                } else {
+                    ReverbLog.d("SiteAnalyzer", "Validation: catalogSelector '$selector' → ${elements.size} matches ✓")
                 }
             }
         }
 
-        config.episodeListSelector?.let { selector ->
-            if (selector.isNotBlank() && selector != "null") {
-                val elements = doc.select(selector)
-                if (elements.isEmpty()) {
-                    errors.add("episodeListSelector '$selector' returned 0 matches")
+        // Validate episode selector against the detail page (if we fetched one).
+        if (detailHtml != null) {
+            val detailDoc = Jsoup.parse(detailHtml)
+            config.episodeListSelector?.let { selector ->
+                if (selector.isNotBlank()) {
+                    val elements = detailDoc.select(selector)
+                    if (elements.isEmpty()) {
+                        errors.add("episodeListSelector '$selector' returned 0 matches on detail page (available: ${summarizeRepeatedElements(detailDoc)})")
+                    } else {
+                        ReverbLog.d("SiteAnalyzer", "Validation: episodeListSelector '$selector' → ${elements.size} matches ✓")
+                    }
                 }
             }
         }
@@ -202,7 +289,7 @@ class SiteAnalyzer(
 
     private fun summarizeRepeatedElements(doc: Document): String {
         val counts = HashMap<String, Int>()
-        doc.select("div, article, li").forEach { el ->
+        doc.select("div, article, li, a").forEach { el ->
             val cls = el.className()
             if (cls.isNotBlank()) {
                 val tag = el.tagName()
@@ -214,31 +301,58 @@ class SiteAnalyzer(
         return counts.entries
             .filter { it.value >= 3 }
             .sortedByDescending { it.value }
-            .take(5)
+            .take(8)
             .joinToString(", ") { "${it.key}(${it.value})" }
     }
 
-    companion object {
-        const val SYSTEM_PROMPT = """You are a web-scraping expert. Given the simplified HTML of a video-streaming website's page, your job is to identify the CSS selectors that an Android app will use to scrape this site into a native app UI.
+    private fun fetchHtml(url: String): String? = try {
+        val request = Request.Builder()
+            .url(url)
+            .header("User-Agent", app.reverb.core.network.UserAgentInterceptor.DEFAULT_UA)
+            .build()
+        httpClient.newCall(request).execute().use { resp ->
+            resp.body?.string()
+        }
+    } catch (e: Exception) {
+        ReverbLog.e("SiteAnalyzer", "Fetch HTML failed for $url: ${e.message}", e)
+        null
+    }
 
-Output STRICT JSON (no markdown, no explanation) with exactly these fields:
+    private fun resolveUrl(base: String, relative: String): String {
+        if (relative.startsWith("http://") || relative.startsWith("https://")) return relative
+        return try { java.net.URI(base).resolve(relative).toString() } catch (e: Exception) { relative }
+    }
+
+    companion object {
+        const val SYSTEM_PROMPT = """You are a web-scraping expert. Given the simplified HTML of multiple page types from a video-streaming website, identify CSS selectors for scraping it into a native Android app UI.
+
+The app needs to:
+1. Show a catalog grid (homepage) → user taps a card → opens details page
+2. Show details page (poster, synopsis, episode list) → user taps an episode → plays video
+3. Search for content
+
+Output STRICT JSON (no markdown, no explanation) with these fields:
 {
-  "catalogSelector": "CSS selector for the element wrapping EACH item card in the grid",
-  "cardTitleSelector": "CSS selector, relative to the card, for the title text",
-  "cardThumbnailSelector": "CSS selector, relative to the card, for the thumbnail img src",
-  "cardUrlSelector": "CSS selector, relative to the card, for the link to the details page",
+  "catalogSelector": "CSS selector for each card on the HOMEPAGE grid",
+  "cardTitleSelector": "CSS selector relative to card, for the title text",
+  "cardThumbnailSelector": "CSS selector relative to card, for the thumbnail img",
+  "cardUrlSelector": "CSS selector relative to card, for the link to the DETAILS PAGE (not episode page)",
   "detailsUrlPattern": "regex matching details-page URLs",
-  "detailsPosterSelector": "CSS selector for the main poster img on the details page",
-  "detailsSynopsisSelector": "CSS selector for the synopsis/description text",
-  "episodeListSelector": "CSS selector wrapping EACH episode link on the details page",
-  "episodeUrlPattern": "regex matching episode-page URLs",
+  "detailsPosterSelector": "CSS selector for poster img on details page",
+  "detailsSynopsisSelector": "CSS selector for synopsis text on details page",
+  "episodeListSelector": "CSS selector for each episode link on the DETAILS PAGE",
+  "episodeUrlPattern": "regex matching episode/watch URLs",
+  "searchUrlPattern": "URL pattern for search with {query} placeholder",
   "videoExtractorHint": "universal"
 }
 
-Rules:
-- Use standard CSS selectors that work in Jsoup.
-- Relative selectors (for card fields) should be relative to the catalogSelector element.
-- If you cannot identify a field, output null for that field — do not guess.
-- Only output the JSON object, nothing else."""
+CRITICAL RULES:
+- cardUrlSelector MUST link to the DETAILS page (which has the episode list), NOT to a watch/episode page
+- Details pages usually have URLs like /anime/{slug} or /title/{id}
+- Episode/watch pages usually have URLs like /watch/{slug}/{ep} or /play/{id}
+- Use standard CSS selectors that work in Jsoup
+- Relative selectors (card fields) should be relative to the catalogSelector element
+- If you cannot identify a field, output null — do not guess
+- Only output the JSON object"""
     }
 }

@@ -37,8 +37,10 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import app.reverb.ReverbApp
+import app.reverb.core.common.ReverbLog
 import app.reverb.data.HistoryEntry
 import app.reverb.source.api.MediaItem
+import app.reverb.ui.nativeui.EpisodePlayerViewModel
 import app.reverb.ui.nativeui.NativeCatalogScreen
 import app.reverb.ui.nativeui.NativeDetailsScreen
 
@@ -75,9 +77,10 @@ fun BrowseScreen(
                 config = config,
                 onBack = { nativeDetailItem = null },
                 onEpisodeClick = { episode ->
-                    // Open the browser for the episode page (video detection + playback).
-                    nativeDetailItem = null
-                    nativeCatalogUrl = episode.url
+                    // Extract the video from the episode URL and play it.
+                    ReverbLog.i("Browse", "Episode tapped: ${episode.title} — ${episode.url}")
+                    val playerVm = remember { EpisodePlayerViewModel(app) }
+                    playerVm.playEpisode(episode)
                 },
             )
         }
